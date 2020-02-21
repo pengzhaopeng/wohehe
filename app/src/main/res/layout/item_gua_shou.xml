@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F4F5FA">
+
+        <com.flyco.roundview.RoundLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:rv_cornerRadius="4dp"
+            app:rv_backgroundColor="@color/white">
+
+            <!--待交易-->
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_djy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="商品名称商品名称商品名称商品名称"
+                    android:textColor="#FF333333"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="10dp"
+
+                    android:layout_marginTop="10dp"/>
+
+                <RelativeLayout
+                    android:layout_below="@+id/tv_name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_sale_money"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        tools:text="￥10000"
+                        android:textColor="#FFFF3B30"
+                        android:textSize="@dimen/text_24sp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="0dp"/>
+                    <TextView
+                        android:id="@+id/pay_way"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="支付宝"
+                        android:textColor="#FF666666"
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+
+                    <ImageView
+                        android:id="@+id/iv_zfb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:src="@drawable/zfb_36"
+                        android:layout_marginRight="6dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/pay_way"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="收款方式："
+                        android:textColor="#FF333333"
+                        android:textSize="12sp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="0dp"
+                        android:layout_toLeftOf="@+id/iv_zfb"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <!--不是待交易-->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_no_djy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:gravity="center_vertical"
+                    android:id="@+id/tv_order_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_centerVertical="true"
+                    tools:text="订单号：45454454545"
+                    android:textSize="@dimen/text_14sp"
+                    android:textColor="#FF333333"
+                    android:layout_marginLeft="10dp"/>
+                <RelativeLayout
+                    android:layout_marginTop="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_centerVertical="true"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:text="需收金额"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="#FF333333"
+                        android:textSize="@dimen/text_12sp"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/tv_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="支付宝"
+                        android:layout_toRightOf="@+id/tv_name"
+                        android:textColor="#FF333333"
+                        android:layout_marginRight="20dp"
+                        android:textSize="@dimen/text_13sp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_get_money"
+                        android:layout_centerVertical="true"
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        tools:text="￥10000"
+                        android:textColor="#FFFF3B30"
+                        android:textSize="@dimen/text_24sp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/tv_sale_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="支付宝"
+                        android:layout_toRightOf="@+id/tv_get_money"
+                        android:textColor="#FF333333"
+                        android:textSize="@dimen/text_13sp"
+                        android:layout_marginRight="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="12dp"
+                style="@style/default_under_line"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:id="@+id/tv_order_time"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="下单时间：2019-10-10  12：20"
+                    android:textSize="@dimen/text_12sp"
+                    android:textColor="#FF333333"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp" />
+
+                <com.flyco.roundview.RoundTextView
+                    android:visibility="gone"
+                    android:id="@+id/btn_qxgs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="取消挂售"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    app:rv_cornerRadius="20dp"
+                    android:paddingTop="5dp"
+                    android:textSize="@dimen/text_13sp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="11dp"
+                    android:paddingRight="11dp"
+                    android:layout_marginRight="10dp"
+                    app:rv_strokeWidth="0.8dp"
+                    app:rv_strokeColor="@color/theme_txt_color"
+                    android:textColor="@color/theme_txt_color"/>
+                <com.flyco.roundview.RoundTextView
+                    android:visibility="gone"
+                    android:id="@+id/btn_fx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="放行"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    app:rv_cornerRadius="20dp"
+                    android:paddingTop="5dp"
+                    android:textSize="@dimen/text_13sp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="11dp"
+                    android:paddingRight="11dp"
+                    android:layout_marginRight="10dp"
+                    app:rv_strokeWidth="0.8dp"
+                    app:rv_strokeColor="@color/theme_txt_color"
+                    android:textColor="@color/theme_txt_color"/>
+            </RelativeLayout>
+
+        </com.flyco.roundview.RoundLinearLayout>
+    </LinearLayout>
+
+</layout>

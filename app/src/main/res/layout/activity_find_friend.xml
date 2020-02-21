@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/theme_bg_color"
+        android:orientation="vertical">
+        <com.flyco.roundview.RoundRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:rv_backgroundColor="@color/white"
+            app:rv_cornerRadius="@dimen/common_radius"
+            android:layout_margin="10dp">
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="手机号"
+                android:textColor="#FF333333"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"/>
+            <com.messoft.gaoqin.wanyiyuan.view.edittext.XEditText
+                android:id="@+id/et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/tv1"
+                android:background="@null"
+                android:textSize="@dimen/text_14sp"
+                android:hint="请输入您需要转让好友的手机号"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="10dp"/>
+        </com.flyco.roundview.RoundRelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="金额将转入对方账户，无法退还"
+            android:textColor="#FF666666"
+            android:textSize="12sp"
+            android:layout_marginLeft="20dp"/>
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_next"
+            style="@style/common_btn_login_sure"
+            android:layout_marginLeft="34dp"
+            android:layout_marginRight="34dp"
+            android:layout_marginTop="30dp"
+            android:text="下一步"
+            app:rv_backgroundColor="@color/theme_color"
+            app:rv_cornerRadius="20dp" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/theme_bg_color">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/theme_color" />
+
+        <!--<View style="@style/default_under_line" />-->
+
+        <!--底部-->
+        <LinearLayout
+            android:id="@+id/rl_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:gravity="center_vertical|right"
+            android:layout_alignParentBottom="true"
+            android:visibility="visible">
+
+            <com.flyco.roundview.RoundTextView
+                android:visibility="gone"
+                android:id="@+id/btn_left"
+                android:layout_toLeftOf="@+id/btn_right"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                tools:text="取消订单"
+                android:layout_centerVertical="true"
+                app:rv_cornerRadius="20dp"
+                android:minWidth="70dp"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="@dimen/text_13sp"
+                app:rv_strokeWidth="0.8dp"
+                android:layout_marginRight="10dp"
+                app:rv_strokeColor="#FF666666"
+                android:textColor="#FF666666"
+                android:layout_marginEnd="10dp" />
+
+            <com.flyco.roundview.RoundTextView
+                android:visibility="gone"
+                android:id="@+id/btn_right"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                tools:text="补录实时数"
+                android:layout_centerVertical="true"
+                app:rv_cornerRadius="20dp"
+                android:minWidth="70dp"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="@dimen/text_13sp"
+                android:layout_toLeftOf="@+id/btn_right1"
+                android:layout_marginRight="10dp"
+                app:rv_strokeWidth="0.8dp"
+                app:rv_strokeColor="@color/theme_txt_color"
+                android:textColor="@color/theme_txt_color"
+                android:layout_marginEnd="10dp" />
+
+
+            <com.flyco.roundview.RoundTextView
+                android:visibility="gone"
+                android:id="@+id/btn_right1"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                tools:text="取消订单"
+                app:rv_cornerRadius="20dp"
+                android:minWidth="70dp"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="@dimen/text_13sp"
+                app:rv_strokeWidth="0.8dp"
+                android:layout_marginRight="10dp"
+                app:rv_strokeColor="#FF666666"
+                android:textColor="#FF666666"
+                android:layout_marginEnd="10dp" />
+        </LinearLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rl_bottom"
+            android:layout_marginTop="0dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="20dp">
+
+                <LinearLayout
+                    android:layout_marginTop="50dp"
+                    android:id="@+id/ll_title_dsk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tv_pay_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="0dp"
+                        android:drawableLeft="@drawable/time"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:text="待寄售"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="@dimen/text_16sp" />
+
+                </LinearLayout>
+
+                <!--商品-->
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_cornerRadius="@dimen/common_radius">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/iv"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="10dp"
+                            app:riv_corner_radius="@dimen/common_radius"
+                            android:src="@drawable/img_load_error_0"
+                            android:scaleType="centerCrop"/>
+                        <TextView
+                            android:id="@+id/tv_title"
+                            android:layout_toRightOf="@+id/iv"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="14dp"
+                            android:maxLines="3"
+                            android:ellipsize="end"
+                            android:textColor="#FF333333"
+                            tools:text="智慧车(ZHC)OBD车载智能精品小冰箱cx-144型号···"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/tv_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="数量 2"
+                            android:layout_toRightOf="@+id/iv"
+                            android:layout_below="@+id/tv_title"
+                            android:textColor="#FF999999"
+                            android:textSize="@dimen/text_12sp"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:id="@+id/tv_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/iv"
+                            android:layout_below="@+id/tv_number"
+                            android:layout_marginTop="10dp"
+                            android:textColor="#FF333333"
+                            tools:text="¥ 358.00"/>
+                    </RelativeLayout>
+
+                </com.flyco.roundview.RoundLinearLayout>
+
+
+                <!--寄售方-->
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:orientation="vertical"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_cornerRadius="@dimen/common_radius">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_jsf_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="寄售方信息"
+                            android:textColor="#FF333333"
+                            android:textSize="14sp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="9dp"/>
+                        <ImageView
+                            android:id="@+id/iv_down"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/arrow"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:visibility="visible"
+                        android:id="@+id/ll_jsf_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <View
+                            android:layout_alignParentBottom="true"
+                            style="@style/default_under_line"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp">
+                            <TextView
+                                android:id="@+id/tv23332"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="寄售方"
+                                android:textColor="#FF666666"
+                                android:textSize="13sp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"/>
+                            <TextView
+                                android:id="@+id/tv_jsf"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="10dp"
+                                android:layout_centerVertical="true"
+                                android:textColor="#FF333333"
+                                android:textSize="@dimen/text_13sp"
+                                tools:text="342342424424234" />
+                        </RelativeLayout>
+                        <View
+                            style="@style/default_under_line"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+                            <TextView
+                                android:id="@+id/tv222d2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="联系方式"
+                                android:textColor="#FF666666"
+                                android:textSize="13sp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"/>
+                            <TextView
+                                android:id="@+id/tv_lxfs"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:textColor="#FF333333"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="10dp"
+                                android:textSize="@dimen/text_13sp"
+                                tools:text="342342424424234"
+                                android:layout_marginLeft="20dp"/>
+                        </RelativeLayout>
+
+                        <View
+                            style="@style/default_under_line"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+                            <TextView
+                                android:id="@+id/tv2223d2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="微信号"
+                                android:textColor="#FF666666"
+                                android:textSize="13sp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"/>
+                            <TextView
+                                android:id="@+id/tv_wx"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:textColor="#FF333333"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="10dp"
+                                android:textSize="@dimen/text_13sp"
+                                tools:text="342342424424234"
+                                android:layout_marginLeft="20dp"/>
+                        </RelativeLayout>
+                        <View
+                            style="@style/default_under_line"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp" />
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/ll_erweima"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <com.flyco.roundview.RoundRelativeLayout
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="12dp"
+                                app:rv_cornerRadius="@dimen/common_radius">
+
+                                <ImageView
+                                    android:id="@+id/iv_ma1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/img_load_error_1" />
+
+                            </com.flyco.roundview.RoundRelativeLayout>
+                            <TextView
+                                android:id="@+id/ma11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:drawableLeft="@drawable/wx_48"
+                                android:drawablePadding="8dp"
+                                android:gravity="center_vertical"
+                                android:text="微信收款码"
+                                android:textColor="#FF333333" />
+                        </LinearLayout>
+                        <RelativeLayout
+                            android:id="@+id/ll_yhk"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginTop="10dp">
+
+                            <com.makeramen.roundedimageview.RoundedImageView
+                                android:id="@+id/iv_yhk_bg"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/zhaoshang_bg"
+                                app:riv_border_color="#333333"
+                                app:riv_corner_radius="10dp"
+                                app:riv_mutate_background="true" />
+
+                            <ImageView
+                                android:id="@+id/iv_yhk_logo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/zhaoshang_logo"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginLeft="20dp"/>
+
+                            <TextView
+                                android:id="@+id/card_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="70dp"
+                                android:layout_marginTop="14dp"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_18sp"
+                                tools:text="狗子" />
+
+                            <TextView
+                                android:id="@+id/card_type"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/card_name"
+                                android:layout_below="@+id/card_name"
+                                android:layout_marginTop="18dp"
+                                android:text="中国招商银行 (深圳龙华支行)"
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:id="@+id/card_code"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/card_name"
+                                android:layout_below="@+id/card_type"
+                                android:layout_marginTop="6dp"
+                                android:text="6256698666666662222333"
+                                android:textColor="@color/white" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </com.flyco.roundview.RoundLinearLayout>
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_cornerRadius="@dimen/common_radius">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="申请时间"
+                            android:textColor="#FF666666"
+                            android:textSize="13sp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"/>
+                        <TextView
+                            android:id="@+id/tv_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:layout_centerVertical="true"
+                            android:textColor="#FF333333"
+                            android:textSize="@dimen/text_13sp"
+                            tools:text="342342424424234"
+                            android:layout_marginLeft="20dp"/>
+                    </RelativeLayout>
+
+                </com.flyco.roundview.RoundLinearLayout>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <!--头-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_toolbar_height">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerInside"
+                android:src="@drawable/back_white_60" />
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

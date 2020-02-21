@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_qg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="false"
+            app:common_setting_widget_title_img="@drawable/code"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_left="我的抢购"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/default_under_line" />
+
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_js"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="false"
+            app:common_setting_widget_title_img="@drawable/code"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_left="我的寄售"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/default_under_line" />
+
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_ss"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="false"
+            app:common_setting_widget_title_img="@drawable/code"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_left="我的申述"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/default_under_line" />
+
+
+    </LinearLayout>
+</layout>

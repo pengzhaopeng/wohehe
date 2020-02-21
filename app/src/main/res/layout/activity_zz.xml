@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:padding="10dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/theme_bg_color">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/iv"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                tools:src="@drawable/default_header"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="小王哥"
+                android:textColor="#FF333333"
+                android:textSize="16sp"
+                android:id="@+id/tv_name"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/iv"
+                android:layout_marginTop="14dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="小王哥"
+                android:textColor="#FF666666"
+                android:textSize="14sp"
+                android:id="@+id/tv_phone"
+                android:layout_alignLeft="@+id/tv_name"
+                android:layout_below="@+id/tv_name"
+                android:layout_toRightOf="@+id/iv"
+                android:layout_marginTop="8dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_no_blank"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#FAFAFA">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="还没有银行卡，快去添加"
+                android:layout_centerInParent="true"
+                android:drawableTop="@drawable/yhk_128"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="转赠金额"
+                android:textColor="#FF333333"
+                android:textSize="@dimen/text_16sp" />
+
+            <TextView
+                android:id="@+id/tv_sxf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="（每次扣除5%手续费）" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:text="¥"
+                android:textColor="#FF333333"
+                android:textSize="40sp" />
+
+            <View
+                android:id="@+id/tv2"
+                android:layout_width="0.5dp"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv1"
+                android:background="#FFD949" />
+
+            <EditText
+                android:id="@+id/et"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv2"
+                android:background="@null"
+                android:hint="请输入金额"
+                android:inputType="number"
+                android:textColor="#FF999999"
+                android:textSize="18sp" />
+
+            <View
+                style="@style/default_under_line"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_ktxje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#FF999999"
+            android:textSize="@dimen/text_12sp"
+            tools:text="金豆转赠最低限额100" />
+
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_next"
+            style="@style/common_btn_login_sure"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="30dp"
+            android:text="确认转账"
+            app:rv_backgroundColor="@color/theme_color"
+            app:rv_cornerRadius="20dp" />
+
+
+    </LinearLayout>
+</layout>

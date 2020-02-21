@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="@color/theme_bg_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.flyco.roundview.RoundLinearLayout
+                android:id="@+id/rl_shz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:rv_backgroundColor="#FFE6E5"
+                app:rv_cornerRadius="@dimen/common_radius">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="14dp"
+                    android:text="审核中…"
+                    android:textColor="#FFFD352E"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:text="您提交的商品正在通过后台审核，请耐心等待！通过审核的商品，将会出现在在“展示中”"
+                    android:textColor="#FFFD352E"
+                    android:textSize="14sp" />
+            </com.flyco.roundview.RoundLinearLayout>
+
+            <com.flyco.roundview.RoundLinearLayout
+                android:id="@+id/rl_shsb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:rv_backgroundColor="#FFE6E5"
+                app:rv_cornerRadius="@dimen/common_radius">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="14dp"
+                    android:text="审核失败"
+                    android:textColor="#FFFD352E"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:text="提交的商品与商品价格不符，本次提交不予通过，请编辑修改后重新提交申请！"
+                    android:textColor="#FFFD352E"
+                    android:textSize="14sp" />
+            </com.flyco.roundview.RoundLinearLayout>
+
+            <com.flyco.roundview.RoundLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:rv_backgroundColor="@color/white"
+                app:rv_cornerRadius="@dimen/common_radius">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="商品名称"
+                        android:textColor="#FF333333"
+                        android:textSize="15sp" />
+
+                    <com.messoft.gaoqin.wanyiyuan.view.edittext.XEditText
+                        android:id="@+id/et_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/tv1"
+                        android:background="@null"
+                        android:hint="输入商品名称"
+                        android:textColor="@color/title1"
+                        android:textSize="@dimen/text_14sp" />
+                </RelativeLayout>
+
+                <View style="@style/default_under_line" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="商品价格"
+                        android:textColor="#FF333333"
+                        android:textSize="15sp" />
+
+                    <com.messoft.gaoqin.wanyiyuan.view.edittext.XEditText
+                        android:id="@+id/et_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/tv2"
+                        android:background="@null"
+                        android:hint="输入商品价格"
+                        android:inputType="number"
+                        android:textColor="@color/title1"
+                        android:textSize="@dimen/text_14sp" />
+                </RelativeLayout>
+
+            </com.flyco.roundview.RoundLinearLayout>
+
+            <com.flyco.roundview.RoundLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                app:rv_backgroundColor="@color/white"
+                app:rv_cornerRadius="@dimen/common_radius">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="商品描述"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:textColor="#FF333333"
+                    android:textSize="15sp"/>
+                <EditText
+                    android:id="@+id/et_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="120dp"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="商品描述"
+                    android:textSize="@dimen/text_13sp"
+                    android:textColor="@color/title1"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"/>
+                <View style="@style/default_under_line" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical"
+                        android:text="商品图片"
+                        android:textColor="#FF333333"
+                        android:textSize="@dimen/text_15sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="(最多三张)"
+                        android:textColor="#FF666666" />
+                </LinearLayout>
+
+                <cn.bingoogolapple.photopicker.widget.BGASortableNinePhotoLayout
+                    android:id="@+id/bag_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:bga_snpl_deleteDrawable="@mipmap/bga_pp_ic_delete"
+                    app:bga_snpl_deleteDrawableOverlapQuarter="false"
+                    app:bga_snpl_editable="true"
+                    app:bga_snpl_itemCornerRadius="0dp"
+                    app:bga_snpl_itemSpanCount="3"
+                    app:bga_snpl_itemWhiteSpacing="6dp"
+                    app:bga_snpl_itemWidth="0dp"
+                    app:bga_snpl_maxItemCount="6"
+                    app:bga_snpl_otherWhiteSpacing="20dp"
+                    app:bga_snpl_placeholderDrawable="@mipmap/bga_pp_ic_holder_dark"
+                    app:bga_snpl_plusDrawable="@mipmap/bga_pp_ic_plus"
+                    app:bga_snpl_plusEnable="true"
+                    app:bga_snpl_sortable="true" />
+            </com.flyco.roundview.RoundLinearLayout>
+
+            <com.flyco.roundview.RoundTextView
+                android:visibility="gone"
+                android:id="@+id/btn_sure"
+                style="@style/common_btn_sure"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:text="提交审核"
+                app:rv_backgroundColor="#FF9800"
+                app:rv_cornerRadius="20dp" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</layout>

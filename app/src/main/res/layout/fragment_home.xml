@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--搜索框-->
+        <RelativeLayout
+            android:id="@+id/rl_head"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="#FF5C1A">
+
+            <com.flyco.roundview.RoundRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="8dp"
+                app:rv_backgroundColor="#30FFFFFF"
+                app:rv_cornerRadius="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableLeft="@drawable/search_white"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical"
+                    android:text="搜索你需要的商品热门关键词"
+                    android:textColor="@color/white" />
+            </com.flyco.roundview.RoundRelativeLayout>
+
+        </RelativeLayout>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:layout_below="@+id/rl_head"
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlAccentColor="@android:color/white"
+            app:srlEnableHeaderTranslationContent="false"
+            app:srlEnablePreviewInEditMode="false"
+            app:srlPrimaryColor="@color/colorPrimary">
+            <com.scwang.smartrefresh.header.MaterialHeader
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <android.support.design.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.design.widget.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:fitsSystemWindows="true"
+                    app:elevation="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        app:layout_scrollFlags="scroll">
+
+                        <com.messoft.gaoqin.wanyiyuan.view.ArcView
+                            android:id="@+id/av"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            app:arcHeight="40dp"
+                            app:bgColor="#FF5C1A"/>
+                        <com.youth.banner.Banner
+                            android:visibility="visible"
+                            android:id="@+id/banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:minHeight="170dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="6dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            app:image_scale_type="fit_center"
+                            app:indicator_drawable_selected="@drawable/banner_red"
+                            app:indicator_drawable_unselected="@drawable/banner_grey"
+                            app:indicator_height="9dp"
+                            app:indicator_margin="3dp"
+                            app:indicator_width="9dp"
+                            app:is_auto_play="true" />
+                    </RelativeLayout>
+
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/tab_linli"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        app:tabBackground="@drawable/ripple_one_item_bg"
+                        app:tabIndicatorColor="#FFF32E1F"
+                        app:tabSelectedTextColor="#FFF32E1F"
+                        app:tabTextColor="@color/colorTabText"/>
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_below="@+id/tab_linli"
+                        style="@style/default_under_line"/>
+
+                </android.support.design.widget.AppBarLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never" />
+                </RelativeLayout>
+
+            </android.support.design.widget.CoordinatorLayout>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+    </RelativeLayout>
+
+</layout>
+

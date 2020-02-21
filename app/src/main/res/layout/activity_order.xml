@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/theme_bg_color">
+
+        <RelativeLayout
+            android:id="@+id/rl_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+
+            <View style="@style/default_under_line" />
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/tv_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:paddingTop="8dp"
+                android:text="确认支付"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_16sp"
+                app:rv_backgroundColor="@color/theme_color"
+                app:rv_cornerRadius="20dp" />
+
+            <!--合计-->
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_total_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:textColor="#FF999999"
+                android:textSize="@dimen/text_13sp"
+                tools:text="共2件," />
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_total_number"
+                android:text="  合计："
+                android:layout_marginLeft="10dp"
+                android:textColor="#FF151515"
+                android:textSize="@dimen/text_13sp" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv1"
+                android:text="¥"
+                android:visibility="gone"
+                android:textColor="#FFFF3B30"
+                android:textSize="@dimen/text_13sp" />
+
+            <TextView
+                android:id="@+id/tv_total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:layout_toRightOf="@+id/tv1"
+                android:text="356.00"
+                android:textColor="#FFFF3B30"
+                android:textSize="@dimen/text_18sp" />
+        </RelativeLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_above="@+id/rl_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/ll_th"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:id="@+id/ll_th1"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/shape_tuihuo_select">
+                        <TextView
+                            android:id="@+id/tv_th_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="批发区合作"
+                            android:layout_gravity="center_horizontal"
+                            android:textSize="@dimen/text_14sp"
+                            android:textColor="#FF9800"/>
+                        <TextView
+                            android:layout_marginTop="6dp"
+                            android:id="@+id/tv_th_11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="授权平台销售，获取对应分润"
+                            android:textSize="@dimen/text_12sp"
+                            android:textColor="#FF9800"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_th2"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:background="@drawable/shape_tuihuo_normal">
+                        <TextView
+                            android:id="@+id/tv_th_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="自购提货"
+                            android:layout_gravity="center_horizontal"
+                            android:textSize="@dimen/text_14sp"
+                            />
+                        <TextView
+                            android:layout_marginTop="6dp"
+                            android:id="@+id/tv_th_21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="选择后将默认放弃本单分润权"
+                            android:textSize="@dimen/text_12sp"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--地址-->
+                <!--有地址-->
+                <com.flyco.roundview.RoundRelativeLayout
+                    android:id="@+id/rl_has_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_margin="10dp"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_cornerRadius="@dimen/common_radius">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_alignParentBottom="true"
+                        android:src="@drawable/address_bg" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#FF333333"
+                        android:textSize="@dimen/text_15sp"
+                        tools:text="收件人：小王哥" />
+
+                    <TextView
+                        tools:text="17688700269"
+                        android:id="@+id/tv_phone"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF333333"
+                        android:textSize="@dimen/text_15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:text="广东省深圳市南山区桃源街道田寮工业区A9栋803号业区A9栋80"
+                        android:layout_marginBottom="16dp"
+                        android:layout_toLeftOf="@+id/iv_arrow"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="6dp"
+                        android:textSize="@dimen/text_13sp"
+                        android:textColor="#FF666666"
+                        android:drawableLeft="@drawable/address_yellow"
+                        android:layout_alignParentBottom="true"/>
+
+                    <ImageView
+                        android:id="@+id/iv_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrow"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+
+                </com.flyco.roundview.RoundRelativeLayout>
+
+                <com.flyco.roundview.RoundRelativeLayout
+                    android:visibility="gone"
+                    android:id="@+id/rl_no_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_margin="10dp"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_cornerRadius="@dimen/common_radius">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FF999999"
+                        android:drawablePadding="4dp"
+                        android:drawableTop="@drawable/address_gray"
+                        android:layout_centerInParent="true"
+                        android:text="您还没有收货地址，请点击添加"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp"
+                        android:layout_alignParentBottom="true"
+                        android:src="@drawable/address_bg" />
+
+                </com.flyco.roundview.RoundRelativeLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rc"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <!--代金券-->
+                <com.flyco.roundview.RoundRelativeLayout
+                    android:id="@+id/rl_djq"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_margin="10dp"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_cornerRadius="@dimen/common_radius">
+                    <ImageView
+                        android:id="@+id/iv_djq"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:src="@drawable/sytz"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"/>
+                    <TextView
+                        android:id="@+id/tv_djq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/djq"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/iv_djq"
+                        android:layout_marginLeft="4dp"
+                        android:textSize="13sp"
+                        android:textColor="@color/title1"/>
+
+                    <CheckBox
+                        android:id="@+id/checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:button="@null"
+                        android:layout_marginRight="4dp"
+                        android:padding="6dp"
+                        android:drawableLeft="@drawable/check_box"
+                        android:drawableStart="@drawable/check_box"/>
+                </com.flyco.roundview.RoundRelativeLayout>
+
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+    </RelativeLayout>
+
+
+</layout>

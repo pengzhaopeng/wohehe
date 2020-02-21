@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/order_success" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="恭喜您，购买成功！"
+            android:textColor="#FF333333"
+            android:textSize="@dimen/text_16sp" />
+
+        <!--批发区-->
+        <LinearLayout
+            android:id="@+id/ll_pfq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前享有批发价额度："
+                    android:textColor="#FF333333"
+                    android:textSize="@dimen/text_18sp" />
+
+                <TextView
+                    android:id="@+id/tv_pfed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FD352E"
+                    android:textSize="@dimen/text_22sp"
+                    tools:text="500元" />
+            </LinearLayout>
+            <!--批发区额度够-->
+            <LinearLayout
+                android:id="@+id/ll_pfq_has"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="进入批发区购买商品吧！"
+                    android:textColor="#FF999999"
+                    android:textSize="@dimen/text_12sp" />
+            </LinearLayout>
+            <!--批发区额度够-->
+            <LinearLayout
+                android:id="@+id/ll_pfq_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="当前账户余额不足支付批发额度！"
+                    android:textColor="#FFFD352E"
+                    android:textSize="@dimen/text_12sp" />
+
+                <TextView
+                    android:id="@+id/tv_go_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="前往充值"
+                    android:textColor="#FF5591DF"
+                    android:textSize="@dimen/text_16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--零售区-->
+        <TextView
+            android:id="@+id/tv_lsq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="进入互相零售区购买商品，获得更多批发额度吧！"
+            android:textColor="#FF999999"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/tv_go_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:text="进入我的订单"
+                android:textColor="#A0A0A0"
+                app:rv_cornerRadius="20dp"
+                app:rv_strokeColor="#A0A0A0"
+                app:rv_strokeWidth="0.3dp" />
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/tv_go_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:text="进入互销零售区"
+                android:textColor="#FF9800"
+                app:rv_cornerRadius="20dp"
+                app:rv_strokeColor="#FF9800"
+                app:rv_strokeWidth="0.3dp" />
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/tv_go_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:text="进入首页"
+                android:textColor="#FF9800"
+                android:visibility="gone"
+                app:rv_cornerRadius="20dp"
+                app:rv_strokeColor="#FF9800"
+                app:rv_strokeWidth="0.3dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>
+

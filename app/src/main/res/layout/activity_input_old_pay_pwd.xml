@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF333333"
+                android:text="请输入原支付密码"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="80dp"/>
+
+            <com.messoft.gaoqin.wanyiyuan.view.PwdInput
+                android:id="@+id/input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:pwd_circle_color="#333333"
+                app:pwd_circle_radius="10dp"
+                app:pwd_length="6"
+                app:pwd_round_rect_radius="3dp"
+                app:pwd_textsize="15sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_forget"
+            android:layout_width="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:text="忘记支付密码"
+            android:textColor="#FF1D8EF1"
+            android:gravity="center"
+            android:textSize="@dimen/text_15sp"
+            android:layout_height="40dp" />
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:background="@color/theme_bg_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.flyco.roundview.RoundLinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/rl_item_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rv_cornerRadius="6dp"
+            app:rv_backgroundColor="@color/white"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <!--联系人-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/tv_link_name"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="联系人"
+                    android:textColor="@color/title1"/>
+
+                <EditText
+                    android:id="@+id/et_link_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_link_name"
+                    android:background="@null"
+                    android:hint="填写联系人"
+                    android:maxEms="16"
+                    android:textSize="@dimen/text_15sp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="#E0E0E0"/>
+
+            <!--电话-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/tv_link_phone"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="联系电话"
+                    android:textColor="@color/title1"/>
+
+                <EditText
+                    android:id="@+id/et_link_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_link_phone"
+                    android:background="@null"
+                    android:hint="填写联系电话"
+                    android:inputType="phone"
+                    android:maxEms="16"
+                    android:textSize="@dimen/text_15sp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="#E0E0E0"/>
+
+            <!--所在地区-->
+            <RelativeLayout
+                android:id="@+id/rl_select_city"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/ripple_one_item_bg"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <TextView
+                    android:id="@+id/tv_region"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="所在地区"
+                    android:textColor="@color/title1"/>
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginRight="50dp"
+                    android:layout_toRightOf="@+id/tv_region"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textSize="@dimen/text_15sp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="#E0E0E0"/>
+
+
+            <!--详细地址-->
+            <EditText
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="输入详细地址"
+                android:maxEms="50"
+                android:padding="10dp"
+                android:textSize="@dimen/text_15sp"/>
+
+            <View
+                style="@style/default_under_line"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_set_dft"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="设为默认收货地址"
+                    android:layout_toRightOf="@+id/cb_set_default"
+                    android:textColor="@color/title1"/>
+
+                <CheckBox
+                    android:id="@+id/cb_set_default"
+                    android:layout_centerVertical="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+        </com.flyco.roundview.RoundLinearLayout>
+
+
+        <com.flyco.roundview.RoundTextView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/tv_sure"
+            android:layout_width="200dp"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="保存"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_14sp"
+            app:rv_backgroundColor="#FF9800"
+            app:rv_cornerRadius="20dp" />
+    </RelativeLayout>
+
+
+
+</layout>
+

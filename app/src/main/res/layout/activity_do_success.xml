@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/gou_72" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                tools:text="转赠成功"
+                android:textColor="#FF333333"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FF333333"
+                    android:textSize="40sp"
+                    tools:text="88800" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text=""
+                    android:textColor="#FF333333"
+                    android:textSize="26sp" />
+            </LinearLayout>
+
+            <!--充值-->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_cz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <View
+                    style="@style/default_under_line"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:id="@+id/tv_cz1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#FF666666"
+                    android:textSize="12sp"
+                    tools:text="提现银行：工商银行 尾号1212" />
+            </LinearLayout>
+
+            <!--提现-->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_tx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="预计两个工作内到账"
+                    android:textColor="#FF999999"
+                    android:textSize="12sp" />
+
+                <View
+                    style="@style/default_under_line"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:id="@+id/tv_tx1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#FF666666"
+                    android:textSize="12sp"
+                    tools:text="提现银行：工商银行 尾号1212" />
+
+                <TextView
+                    android:id="@+id/tv_tx2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#FF666666"
+                    android:textSize="12sp"
+                    tools:text="提现银行：工商银行 尾号1212" />
+
+                <TextView
+                    android:id="@+id/tv_tx3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#FF666666"
+                    android:textSize="12sp"
+                    tools:text="提现银行：工商银行 尾号1212" />
+            </LinearLayout>
+
+            <!--转账-->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_zz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+
+                <View
+                    style="@style/default_under_line"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:id="@+id/tv_zz1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#FF666666"
+                    android:textSize="12sp"
+                    tools:text="提现银行：工商银行 尾号1212" />
+
+                <TextView
+                    android:id="@+id/tv_zz2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#FF666666"
+                    android:textSize="12sp"
+                    tools:text="提现银行：工商银行 尾号1212" />
+
+                <TextView
+                    android:id="@+id/tv_zz3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#FF666666"
+                    android:textSize="12sp"
+                    tools:text="提现银行：工商银行 尾号1212" />
+            </LinearLayout>
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/tv_next"
+                style="@style/common_btn_login_sure"
+                android:layout_marginLeft="34dp"
+                android:layout_marginRight="34dp"
+                android:layout_marginTop="30dp"
+                android:text="完成"
+                android:textColor="@color/theme_color"
+                android:textSize="@dimen/text_16sp"
+                app:rv_cornerRadius="20dp"
+                app:rv_strokeColor="@color/theme_color"
+                app:rv_strokeWidth="1dp" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</layout>
+

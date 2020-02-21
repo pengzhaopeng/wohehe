@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@drawable/ripple_one_item_bg">
+
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/text_left_margin"
+        android:scaleType="centerCrop"
+        android:src="@drawable/code"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="14dp"
+        android:textColor="@color/title1"
+        android:textSize="@dimen/text_16sp"
+        android:layout_toRightOf="@+id/iv"
+        android:text="车牌号" />
+
+    <ImageView
+        android:id="@+id/tv_arrow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/arrow" />
+
+    <TextView
+        android:id="@+id/tv_right"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:gravity="right|center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/tv_arrow1"
+        android:layout_marginRight="0dp"
+        android:hint="点击设置"
+        android:textColorHint="@color/theme_color"
+        android:textColor="@color/title1" />
+
+    <View
+        android:id="@+id/underLine"
+        style="@style/default_under_line"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

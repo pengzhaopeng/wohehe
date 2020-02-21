@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/theme_bg_color"
+        android:orientation="vertical">
+
+        <com.flyco.roundview.RoundLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            app:rv_backgroundColor="@color/white"
+            app:rv_cornerRadius="@dimen/common_radius">
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_has_blank"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="#FAFAFA">
+
+                <TextView
+                    android:id="@+id/tv12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="提现到"
+                    android:textColor="#FF333333" />
+
+                <ImageView
+                    android:id="@+id/iv_bank_log"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_toRightOf="@+id/tv12"
+                    tools:src="@drawable/gongshang_logo" />
+
+                <TextView
+                    android:id="@+id/tv_bank_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/iv_bank_log"
+                    android:textColor="#FF333333"
+                    tools:text="中国工商银行" />
+
+                <TextView
+                    android:id="@+id/tv_bank_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/tv_bank_name"
+                    android:layout_below="@+id/tv_bank_name"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#FF333333"
+                    android:textSize="@dimen/text_12sp"
+                    tools:text="2313213213213213131313" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/tv_bank_name"
+                    android:layout_below="@+id/tv_bank_code"
+                    android:layout_marginTop="10dp"
+                    android:text="(预计两个工作日内到账)"
+                    android:textColor="#FF999999"
+                    android:textSize="@dimen/text_12sp" />
+
+                <ImageView
+                    android:id="@+id/iv_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/rl_no_blank"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="#FAFAFA">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="还没有银行卡，快去添加"
+                    android:layout_centerInParent="true"
+                    android:drawableTop="@drawable/yhk_128"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:text="提现金额"
+                    android:textColor="#FF333333"
+                    android:textSize="@dimen/text_16sp" />
+
+                <TextView
+                    android:id="@+id/tv_sxf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="（每次扣除5%手续费）" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="6dp">
+
+                <TextView
+                    android:id="@+id/tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:text="¥"
+                    android:textColor="#FF333333"
+                    android:textSize="40sp" />
+
+                <View
+                    android:id="@+id/tv2"
+                    android:layout_width="0.5dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/tv1"
+                    android:background="#FFD949" />
+
+                <EditText
+                    android:id="@+id/et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/tv2"
+                    android:background="@null"
+                    android:hint=""
+                    android:inputType="number"
+                    android:textColor="#FF333333"
+                    android:textSize="40sp" />
+
+                <View
+                    style="@style/default_under_line"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_ktxje"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#FF999999"
+                android:textSize="@dimen/text_12sp"
+                tools:text="可提现余额3500.2" />
+
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/tv_next"
+                style="@style/common_btn_login_sure"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="30dp"
+                android:text="申请提现"
+                app:rv_backgroundColor="@color/theme_color"
+                app:rv_cornerRadius="20dp" />
+        </com.flyco.roundview.RoundLinearLayout>
+
+
+    </LinearLayout>
+</layout>

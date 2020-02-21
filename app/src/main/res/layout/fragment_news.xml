@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="46dp"
+           android:text="消息"
+           android:gravity="center"
+           android:textColor="@color/title1"
+           android:textSize="@dimen/text_16sp"/>
+        <View
+            android:visibility="gone"
+            style="@style/default_under_line"/>
+
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_clgl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            android:visibility="gone"
+            app:common_setting_widget_has_img="true"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_img="@drawable/cltx"
+            app:common_setting_widget_title_left="车辆管理"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/line_dash"
+            android:layerType="software" />
+
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_sytz"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="true"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_img="@drawable/sytz"
+            app:common_setting_widget_title_left="收益通知"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/line_dash"
+            android:layerType="software" />
+
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_ddtz"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="true"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_img="@drawable/ddtz"
+            app:common_setting_widget_title_left="订单通知"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/line_dash"
+            android:layerType="software" />
+
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_xtxx"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="true"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_img="@drawable/xtgg"
+            app:common_setting_widget_title_left="系统消息"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/line_dash"
+            android:layerType="software" />
+
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_hdgg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="true"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_img="@drawable/hdgg"
+            app:common_setting_widget_title_left="活动公告"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/line_dash"
+            android:layerType="software" />
+    </LinearLayout>
+</layout>

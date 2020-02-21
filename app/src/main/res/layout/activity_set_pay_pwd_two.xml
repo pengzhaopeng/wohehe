@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF333333"
+            android:text="请再次填写确认"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"/>
+
+        <com.messoft.gaoqin.wanyiyuan.view.PwdInput
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:pwd_circle_color="#333333"
+            app:pwd_circle_radius="10dp"
+            app:pwd_length="6"
+            app:pwd_round_rect_radius="3dp"
+            app:pwd_textsize="15sp" />
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_next"
+            style="@style/common_btn_login_sure"
+            android:layout_marginLeft="34dp"
+            android:layout_marginRight="34dp"
+            android:layout_marginTop="30dp"
+            android:text="确定"
+            app:rv_backgroundColor="@color/theme_color"
+            app:rv_cornerRadius="20dp" />
+    </LinearLayout>
+</layout>

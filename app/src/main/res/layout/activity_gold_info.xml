@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:background="#F4F5FA"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.flyco.roundview.RoundLinearLayout
+            app:rv_backgroundColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:rv_cornerRadius="4dp"
+            android:layout_margin="10dp">
+            <TextView
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="出售金豆"
+                android:textColor="#FF333333"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="6000个"
+                android:textColor="#FF333333"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="商品名称"
+                    android:textColor="#FF333333"/>
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    tools:text="哈手机"
+                    android:textColor="#FF333333"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"/>
+            </RelativeLayout>
+
+            <View
+                style="@style/default_under_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="转让金额"
+                    android:textColor="#FF333333"/>
+                <TextView
+                    android:id="@+id/tv_money1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    tools:text="哈手机"
+                    android:textColor="#FF333333"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"/>
+            </RelativeLayout>
+
+            <View
+                style="@style/default_under_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_header"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/default_header"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    tools:text="哈手机"
+                    android:id="@+id/tv_name"
+                    android:textColor="#FF333333"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"/>
+            </RelativeLayout>
+
+            <View
+                style="@style/default_under_line"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="联系方式"
+                    android:textColor="#FF333333"/>
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    tools:text="哈手机"
+                    android:textColor="#FF333333"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"/>
+            </RelativeLayout>
+
+            <View
+                style="@style/default_under_line"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="微信"
+                    android:textColor="#FF333333"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    tools:text="哈手机"
+                    android:id="@+id/tv_wx"
+                    android:textColor="#FF333333"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"/>
+            </RelativeLayout>
+        </com.flyco.roundview.RoundLinearLayout>
+
+        <com.flyco.roundview.RoundLinearLayout
+            app:rv_backgroundColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:rv_cornerRadius="4dp"
+            android:layout_margin="10dp">
+
+            <RelativeLayout
+                android:layout_width="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+                <TextView
+                    android:id="@+id/pay_way"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="支付宝"
+                    android:textColor="#FF333333"
+                    android:layout_marginRight="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+
+                <ImageView
+                    android:id="@+id/iv_zfb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/zfb_48"
+                    android:layout_marginRight="6dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/pay_way"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="收款方式："
+                    android:textColor="#FF333333"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="0dp"
+                    android:layout_toLeftOf="@+id/iv_zfb"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_marginTop="12dp"
+                style="@style/default_under_line"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="平台预估价"
+                android:textColor="#FF333333"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="6000元"
+                android:textColor="#FF333333"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/btn_pay"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
+                app:rv_backgroundColor="#FF9800"
+                android:text="我想要"
+                android:textColor="@color/white"
+                android:gravity="center"
+                app:rv_cornerRadius="20dp"
+                android:textSize="@dimen/text_14sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="14dp"/>
+        </com.flyco.roundview.RoundLinearLayout>
+    </LinearLayout>
+</layout>

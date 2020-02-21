@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="145dp"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="6.33dp"
+        android:layout_marginTop="2.67dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_sm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/launch_single">
+
+            <ImageView
+                android:layout_marginStart="20dp"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/wysm"/>
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="2dp"
+                android:text="我要售卖"
+                android:textColor="#FF333333"
+                android:textSize="16sp"
+                android:layout_marginLeft="48dp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/ll_cg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/launch_friend">
+
+            <ImageView
+                android:layout_marginStart="20dp"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/wycg"
+                android:layout_marginLeft="20dp" />
+
+            <TextView
+                android:layout_marginStart="48dp"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的采购"
+                android:textColor="#FF333333"
+                android:textSize="16sp"
+                android:layout_marginLeft="48dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ll_gs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/launch_friend">
+
+            <ImageView
+                android:layout_marginStart="20dp"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/wdgs"
+                android:layout_marginLeft="20dp" />
+
+            <TextView
+                android:layout_marginStart="48dp"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的转让"
+                android:textColor="#FF333333"
+                android:textSize="16sp"
+                android:layout_marginLeft="48dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

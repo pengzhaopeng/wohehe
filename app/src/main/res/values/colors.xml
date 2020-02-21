@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#eae8e8</color>
+    <color name="colorPrimaryDark">#cecdcd</color>
+    <!--<color name="colorAccent">#FF4081</color>-->
+    <color name="colorAccent">#0991ff</color>
+
+    <color name="pull_refresh_bg">#f5f5f5</color>
+
+    <!--主题色-->
+    <color name="theme_color">#FFA219</color>
+    <color name="theme_txt_color">#FFFF9800</color>
+    <color name="theme_bg_color">#F4F5FA</color>
+    <!--名字颜色-->
+    <color name="name_color">#0d79d1</color>
+
+    <color name="mainRed">#ff3955</color>
+    <color name="mainBlack">#242828</color>
+
+    <!--引导遮罩背景-->
+    <color name="come_guide_bg">#80000000</color>
+
+    <!--###############################字体颜色开始############################## -->
+    <color name="text_color">#353535</color>
+    <!--正在加载的字体颜色-->
+    <color name="colorTabText">#585858</color>
+    <color name="btn_gray">#bababa</color>
+    <!--大标题-->
+    <color name="title1">#333333</color>
+    <!--正文字体-->
+    <color name="title2">#666666</color>
+    <!--灰色字体-->
+    <color name="title3">#999999</color>
+
+
+    <!--title1-->
+    <!--##############################字体颜色结束############################## -->
+
+    <!--时间的颜色-->
+    <color name="time_color">#9C9C9C</color>
+
+    <!--分割线-->
+    <color name="colorPageBg">#f2f4f5</color>
+    <color name="pageBg">#F8F8F8</color>
+
+    <color name="tab_unchecked">#757575</color>
+    <!--透明-->
+    <color name="transparent">#00000000</color>
+    <!--白色-->
+    <color name="white">#FFFFFFFF</color>
+    <!--红色-->
+    <color name="red">#ff0000</color>
+    <!--绿色-->
+    <color name="green">#09b72f</color>
+    <!--蓝色-->
+    <color name="blue">#0991ff</color>
+
+    <color name="divider">#999</color>
+    <color name="transparent_half">#88000000</color>
+
+    <!--item的5.0以上的水波纹颜色-->
+    <color name="itemBackground">#eaeaea</color>
+    <!--item的5.0一下版本选择器颜色-->
+    <color name="itemLowBackground">#eaeaea</color>
+
+    <color name="drop_down_selected">#7B1FA2</color>
+    <color name="drop_down_unselected">#111111</color>
+    <color name="mask_color">#88888888</color>
+    <color name="check_bg">#f2f2f2</color>
+    <color name="un_press_color">#9C27B0</color>
+    <color name="gray">#cccccc</color>
+
+    <color name="comm_text_gray_light">#999999</color>
+    <color name="comm_text_gray">#666666</color>
+    <color name="comm_text_gray_dark">#333333</color>
+
+    <color name="comm_transparent">#00000000</color>
+    <color name="comm_white">#FFFFFF</color>
+    <color name="comm_black">#000000</color>
+    <color name="comm_yellow">#ffd022</color>
+    <color name="comm_bg">#f6f6f6</color>
+    <color name="comm_price">#ff5c5c</color>
+    <color name="comm_line">#dddddd</color>
+
+    <color name="grayf9">#f9f9f9</color>
+    <color name="gray_gb">#dddddd</color>
+    <color name="grayc4">#c4c4c4</color>
+    <color name="graye3">#e3e7ee</color>
+    <color name="alipay">#00a5ff</color>
+    <color name="gray_e5">#e5e5e5</color>
+    <color name="black">#000000</color>
+
+    <!--评论名字颜色-->
+    <color name="comment_text_name">#057fe2</color>
+    <color name="default_text">#8a000000</color>
+    <color name="default_input_hide_text">#969595</color>
+
+    <!--个人账单-->
+    <color name="my_bill_1">#FF7676</color>
+    <color name="my_bill_2">#FF88EF</color>
+    <color name="my_bill_3">#9087FF</color>
+    <color name="my_bill_4">#5ED0FF</color>
+    <color name="my_bill_5">#67FF86</color>
+    <color name="my_bill_6">#FF9800</color>
+</resources>

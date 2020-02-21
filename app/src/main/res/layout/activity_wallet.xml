@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/wallet_bg"
+            android:scaleType="centerCrop"/>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:paddingTop="@dimen/default_toolbar_height"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_cornerRadius="@dimen/common_radius">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/qianbao_64" />
+
+                    <TextView
+                        android:id="@+id/tv_ye"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="14dp"
+                        android:text="10000"
+                        android:textColor="#FF333333"
+                        android:textSize="40sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="12dp"
+                        android:text="钱包余额(元)"
+                        android:textColor="#FF333333" />
+
+                    <TextView
+                        android:id="@+id/tv_mx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="0dp"
+                        android:padding="10dp"
+                        android:text="明细>>"
+                        android:textColor="#FF5591DF"
+                        android:textSize="12sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.flyco.roundview.RoundTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/tx"
+                            android:paddingBottom="8dp"
+                            android:paddingLeft="30dp"
+                            android:paddingRight="30dp"
+                            android:paddingTop="8dp"
+                            android:text="提现"
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/tv_tx"
+                            android:gravity="center_vertical"
+                            android:textColor="#FF666666"
+                            app:rv_backgroundColor="#F3F4F9"
+                            app:rv_cornerRadius="@dimen/common_radius" />
+
+                        <com.flyco.roundview.RoundTextView
+                            android:id="@+id/tv_zz"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="10dp"
+                            android:drawableLeft="@drawable/zz"
+                            android:paddingBottom="8dp"
+                            android:paddingLeft="30dp"
+                            android:textColor="#FF666666"
+                            android:layout_marginBottom="10dp"
+                            android:paddingRight="30dp"
+                            android:paddingTop="8dp"
+                            android:text="转账"
+                            android:gravity="center_vertical"
+                            app:rv_backgroundColor="#F3F4F9"
+                            app:rv_cornerRadius="@dimen/common_radius" />
+                    </RelativeLayout>
+
+                    <com.flyco.roundview.RoundTextView
+                        android:id="@+id/tv_cz"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:gravity="center"
+                        android:text="充值"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="@dimen/text_16sp"
+                        app:rv_backgroundColor="#FF9800"
+                        app:rv_cornerRadius="20dp" />
+
+                </com.flyco.roundview.RoundLinearLayout>
+
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_cornerRadius="@dimen/common_radius">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_jf"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="积分"
+                            android:textColor="#FF333333"
+                            android:textSize="16sp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"/>
+
+                        <ImageView
+                            android:id="@+id/iv_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/arrow"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"/>
+                        <TextView
+                            android:id="@+id/tv_jf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="666"
+                            android:textColor="#FF999999"
+                            android:textSize="16sp"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/iv_arrow"/>
+                    </RelativeLayout>
+                    <View
+                        style="@style/default_under_line"/>
+                    <RelativeLayout
+                        android:id="@+id/rl_djq"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="代金券"
+                            android:textColor="#FF333333"
+                            android:textSize="16sp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"/>
+
+                        <ImageView
+                            android:id="@+id/iv_arrow1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/arrow"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"/>
+                        <TextView
+                            android:id="@+id/tv_djq"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="666"
+                            android:textColor="#FF999999"
+                            android:textSize="16sp"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/iv_arrow1"/>
+                    </RelativeLayout>
+                </com.flyco.roundview.RoundLinearLayout>
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_cornerRadius="@dimen/common_radius">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_stf"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="权益值"
+                            android:textColor="#FF333333"
+                            android:textSize="16sp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"/>
+
+                        <ImageView
+                            android:id="@+id/iv_arrow2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/arrow"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"/>
+                        <TextView
+                            android:id="@+id/tv_stf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="666"
+                            android:textColor="#FF999999"
+                            android:textSize="16sp"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/iv_arrow2"/>
+                    </RelativeLayout>
+
+                </com.flyco.roundview.RoundLinearLayout>
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_toolbar_height">
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="6dp"
+                android:scaleType="centerInside"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back_white_60" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的钱包"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18sp"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>
+

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_next"
+            style="@style/common_btn_login_sure"
+            android:layout_marginLeft="34dp"
+            android:layout_marginRight="34dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:text="提交商品审核"
+            app:rv_backgroundColor="@color/theme_color"
+            app:rv_cornerRadius="20dp" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_linli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:tabBackground="@drawable/ripple_one_item_bg"
+            app:tabIndicatorColor="@color/theme_color"
+            app:tabSelectedTextColor="@color/theme_color"
+            app:tabTextColor="@color/colorTabText"/>
+
+        <View
+            android:id="@+id/view"
+            android:layout_below="@+id/tab_linli"
+            style="@style/default_under_line"/>
+
+        <android.support.v4.view.ViewPager
+            android:layout_above="@+id/tv_next"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/view"
+            android:id="@+id/vp_linli"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+</layout>

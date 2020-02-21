@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- AppBarLayout中需要在滑动过程中隐藏的控件需要设置layout_scrollFlags属性 -->
+            <!-- layout_scrollFlags:
+            1、snap:ToolBar：隐藏一半后自动隐藏剩余部分，没有一半松开手则弹出弹出显示全部Toolbar，向下滑动显示也是这样
+            2、enterAlways：滑动多少则显示或隐藏多少
+            3、enterAlwaysCollapsed
+            4、exitUntilCollapsed-->
+
+            <!-- 声明了layout_scrollFlags，滑动过程中会隐藏 -->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/default_toolbar_height"
+                android:background="@color/white"
+                app:layout_scrollFlags="scroll">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/title1"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:padding="10dp"
+                    android:textColor="@color/title1" />
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <!-- 此处也需要声明 app:layout_behavior="@string/appbar_scrolling_view_behavior" ，
+            否则ViewPager会占用Toolbar和TabLayout的位置-->
+        <RelativeLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+            <!--加载中..-->
+            <LinearLayout
+                android:id="@+id/ll_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120dp"
+                android:gravity="center_vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/img_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/loading_image" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="努力加载中..."
+                    android:textColor="@color/colorTabText"
+                    android:textSize="@dimen/text_14sp" />
+            </LinearLayout>
+
+            <!--加载失败-->
+            <LinearLayout
+                android:id="@+id/ll_error_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="50dp"
+                android:paddingTop="50dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_err"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/load_error" />
+
+                <TextView
+                    android:id="@+id/tv_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="未找到匹配的数据,点击重试"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

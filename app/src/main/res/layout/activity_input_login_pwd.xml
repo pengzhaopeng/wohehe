@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:text="输入登录密码进行身份验证"
+            android:textColor="#FF333333" />
+
+        <com.messoft.gaoqin.wanyiyuan.view.edittext.XEditText
+            android:id="@+id/et"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginRight="34dp"
+            android:layout_marginTop="40dp"
+            android:hint="请输入登录密码"
+            android:inputType="textPassword" />
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_next"
+            style="@style/common_btn_login_sure"
+            android:layout_marginLeft="34dp"
+            android:layout_marginRight="34dp"
+            android:layout_marginTop="30dp"
+            android:text="下一步"
+            app:rv_backgroundColor="@color/theme_color"
+            app:rv_cornerRadius="20dp" />
+    </LinearLayout>
+</layout>

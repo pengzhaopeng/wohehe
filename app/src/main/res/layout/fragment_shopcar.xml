@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:background="@color/white"
+            android:minHeight="?android:attr/actionBarSize">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:text="@string/cart"
+                android:textColor="#333333"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/edit"
+                android:textColor="#999999"
+                android:textSize="14sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignParentBottom="true"
+                android:background="#BDBDBD"/>
+
+        </RelativeLayout>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:layout_below="@+id/rg"
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="visible">
+
+            <com.messoft.gaoqin.wanyiyuan.utils.shopcar.RecyclerViewWithContextMenu
+                android:id="@+id/recycler"
+                android:background="#F4F5FA"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/rl_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="你还没添加商品~"
+                android:drawablePadding="6dp"
+                android:textSize="@dimen/text_13sp"
+                android:drawableTop="@drawable/shop_car_no"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@android:color/white"
+            android:elevation="3dp"
+            android:gravity="center_vertical"
+            android:minHeight="?android:attr/actionBarSize"
+            android:orientation="horizontal"
+            android:paddingLeft="5dp">
+
+            <CheckBox
+                android:id="@+id/checkbox_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/all_select"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="@string/total_"
+                android:textColor="#222222"
+                android:textSize="15dp"/>
+
+            <TextView
+                android:id="@+id/tv_total_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rmb_X"
+                android:textColor="@color/red"
+                android:textSize="15dp"/>
+
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/btn_go_to_pay"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="去结算"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_16sp"
+                app:rv_backgroundColor="@color/theme_color"
+                app:rv_cornerRadius="20dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

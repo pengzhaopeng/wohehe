@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="-20dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/back_black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:text="注册"
+                android:textColor="#FF333333"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:text="欢迎来到万益源"
+                android:textColor="#FF3F3F3F"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/iv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true" />
+
+                <com.messoft.gaoqin.wanyiyuan.view.edittext.XEditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/iv1"
+                    android:hint="请输入手机号"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:textColor="@color/title1"
+                    app:x_clearDrawable="@drawable/x_et_svg_ic_clear_24dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <ImageView
+                    android:id="@+id/iv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true" />
+
+                <com.messoft.gaoqin.wanyiyuan.view.edittext.XEditText
+                    android:id="@+id/et_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toLeftOf="@+id/tv_get_code"
+                    android:layout_toRightOf="@+id/iv2"
+                    android:hint="验证码"
+                    android:maxLength="11"
+                    android:textColor="@color/title1"
+                    app:x_clearDrawable="@drawable/x_et_svg_ic_clear_24dp" />
+
+                <com.flyco.roundview.RoundTextView
+                    app:rv_cornerRadius="20dp"
+                    app:rv_strokeColor="@color/theme_color"
+                    app:rv_strokeWidth="1dp"
+                    android:id="@+id/tv_get_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:gravity="bottom"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:text="获取验证码"
+                    android:textColor="@color/theme_color" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <ImageView
+                    android:id="@+id/iv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true" />
+
+                <com.messoft.gaoqin.wanyiyuan.view.edittext.XEditText
+                    android:id="@+id/et_pwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/iv3"
+                    android:hint="请输入密码"
+                    android:inputType="textPassword"
+                    android:maxLength="11"
+                    android:textColor="@color/title1"
+                    app:x_clearDrawable="@drawable/x_et_svg_ic_clear_24dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <ImageView
+                    android:id="@+id/iv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true" />
+
+                <com.messoft.gaoqin.wanyiyuan.view.edittext.XEditText
+                    android:id="@+id/et_tjr"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="6dp"
+                    android:layout_toRightOf="@+id/iv4"
+                    android:hint="输入推荐人手机号（选填）"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:textColor="@color/title1"
+                    app:x_clearDrawable="@drawable/x_et_svg_ic_clear_24dp" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/rl_agree"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <CheckBox
+                    android:id="@+id/cb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:button="@null"
+                    android:drawableLeft="@drawable/check_box"
+                    android:drawableStart="@drawable/check_box"
+                    android:gravity="center"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:id="@+id/tv_deal"
+                    android:layout_marginLeft="-5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/cb"
+                    tools:text="我已阅读并同意《数据共享协议》" />
+
+            </RelativeLayout>
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/tv_next"
+                android:text="注册"
+                android:layout_marginTop="30dp"
+                style="@style/common_btn_login_sure"
+                android:layout_marginLeft="34dp"
+                android:layout_marginRight="34dp"
+                app:rv_backgroundColor="@color/theme_color"
+                app:rv_cornerRadius="20dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_go_login"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="已有账号，"
+                android:textColor="#FF999999" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="去登录"
+                android:textColor="#FFA219" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

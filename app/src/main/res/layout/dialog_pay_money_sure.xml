@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flyco.roundview.RoundLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    app:rv_cornerRadius_TL="10dp"
+    app:rv_cornerRadius_TR="10dp"
+    app:rv_backgroundColor="@color/white">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/set_car_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginBottom="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="需付款"
+                android:textColor="#FF999999"
+                android:textSize="@dimen/text_16sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp" />
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="确认支付716.00元"
+                android:textColor="#FF333333"
+                android:textSize="@dimen/text_24sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_qianbao_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="钱包余额：4444元"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:textColor="#FF999999"
+                android:drawableLeft="@drawable/qianbao_64"
+                android:textSize="@dimen/text_12sp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="付款方式"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#FF333333"
+        android:textSize="15sp"/>
+
+
+    <!--支付包-->
+    <RelativeLayout
+        android:id="@+id/rl_zfb"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <CheckBox
+            android:id="@+id/cb_zfb"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@null"
+            android:drawablePadding="6dp"
+            android:paddingLeft="10dp"
+            android:layout_centerVertical="true"
+            android:text="支付宝支付"
+            android:gravity="center_vertical"
+            android:textColor="#FF333333"
+            android:textSize="@dimen/text_16sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/zfb_60"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"/>
+    </RelativeLayout>
+
+    <!--微信-->
+    <RelativeLayout
+        android:id="@+id/rl_wx"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <CheckBox
+            android:id="@+id/cb_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@null"
+            android:drawablePadding="6dp"
+            android:paddingLeft="10dp"
+            android:layout_centerVertical="true"
+            android:text="微信支付"
+            android:gravity="center_vertical"
+            android:textColor="#FF333333"
+            android:textSize="@dimen/text_16sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/wx_60"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"/>
+    </RelativeLayout>
+
+    <!--零钱-->
+    <RelativeLayout
+        android:id="@+id/rl_lq"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <CheckBox
+            android:id="@+id/cb_qb"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@null"
+            android:drawablePadding="6dp"
+            android:paddingLeft="10dp"
+            android:layout_centerVertical="true"
+            android:text="钱包余额支付"
+            android:checked="true"
+            android:gravity="center_vertical"
+            android:textColor="#FF333333"
+            android:textSize="@dimen/text_16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="（推荐）"
+            android:textColor="#FF4C4C"
+            android:textSize="12sp"
+            android:layout_toRightOf="@+id/cb_qb"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/qb_60"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"/>
+        <TextView
+            android:id="@+id/tv_qbye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="钱包余额：4444"
+            android:textColor="#FF999999"
+            android:textSize="12sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="60dp"/>
+    </RelativeLayout>
+
+
+    <com.flyco.roundview.RoundTextView
+        android:id="@+id/tv_next"
+        style="@style/common_btn_login_sure"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:text="确认支付716.00元"
+        app:rv_backgroundColor="@color/theme_color"
+        app:rv_cornerRadius="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:visibility="gone"
+        android:layout_marginTop="0dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerInside"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/cha_72"/>
+</com.flyco.roundview.RoundLinearLayout>

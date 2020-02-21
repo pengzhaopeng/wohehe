@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_ggzl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="false"
+            app:common_setting_widget_title_img="@drawable/code"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_left="个人资料"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/default_under_line" />
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_ysxy"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="false"
+            app:common_setting_widget_title_img="@drawable/code"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_left="用户隐私协议"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/default_under_line" />
+
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_ddgl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="false"
+            app:common_setting_widget_title_img="@drawable/code"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_left="地址管理"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/default_under_line" />
+
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_yhk"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="false"
+            app:common_setting_widget_title_img="@drawable/code"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_left="银行卡"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/default_under_line" />
+
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_xgmm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="false"
+            app:common_setting_widget_title_img="@drawable/code"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_left="修改密码"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/default_under_line" />
+
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_qchc"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="false"
+            app:common_setting_widget_title_img="@drawable/code"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_left="清除缓存"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/default_under_line" />
+
+        <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+            android:id="@+id/cw_zxzh"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_setting_height"
+            app:common_setting_widget_has_img="false"
+            app:common_setting_widget_title_img="@drawable/code"
+            app:common_setting_widget_has_underLine="false"
+            app:common_setting_widget_title_left="注销账号"
+            app:common_setting_widget_title_right="" />
+        <View
+            style="@style/default_under_line" />
+
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/btn_pay"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            app:rv_backgroundColor="#FF1515"
+            android:text="退出登录"
+            android:textColor="@color/white"
+            android:gravity="center"
+            app:rv_cornerRadius="20dp"
+            android:textSize="@dimen/text_14sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="14dp"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:descendantFocusability="blocksDescendants"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--搜索框-->
+        <RelativeLayout
+            android:id="@+id/rl_head"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="#FF5C1A">
+
+            <com.flyco.roundview.RoundRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="8dp"
+                app:rv_backgroundColor="#30FFFFFF"
+                app:rv_cornerRadius="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableLeft="@drawable/search_white"
+                    android:drawablePadding="4dp"
+                    android:gravity="center_vertical"
+                    android:text="搜索你需要的商品热门关键词"
+                    android:textColor="@color/white" />
+            </com.flyco.roundview.RoundRelativeLayout>
+
+        </RelativeLayout>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:layout_below="@+id/rl_head"
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlAccentColor="@android:color/white"
+            app:srlEnableHeaderTranslationContent="false"
+            app:srlEnablePreviewInEditMode="false"
+            app:srlPrimaryColor="@color/colorPrimary">
+            <com.scwang.smartrefresh.header.MaterialHeader
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white">
+
+                        <com.messoft.gaoqin.wanyiyuan.view.ArcView
+                            android:id="@+id/av"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            app:arcHeight="40dp"
+                            app:bgColor="#FF5C1A"/>
+                        <com.youth.banner.Banner
+                            android:visibility="visible"
+                            android:id="@+id/banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:minHeight="170dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="6dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            app:image_scale_type="fit_center"
+                            app:indicator_drawable_selected="@drawable/banner_red"
+                            app:indicator_drawable_unselected="@drawable/banner_grey"
+                            app:indicator_height="9dp"
+                            app:indicator_margin="3dp"
+                            app:indicator_width="9dp"
+                            app:is_auto_play="true" />
+                    </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/ll_1"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/hxq"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="互销区"
+                                android:textColor="#FF333333"
+                                android:textSize="@dimen/text_13sp"
+                                android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:id="@+id/ll_2"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/yyqg"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="赚多多"
+                                android:textColor="#FF333333"
+                                android:textSize="@dimen/text_13sp"
+                                android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:id="@+id/ll_3"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/default_header"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="预约抢购"
+                                android:textColor="#FF333333"
+                                android:textSize="@dimen/text_13sp"
+                                android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_5"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/jfsc"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="积分商城"
+                                android:textColor="#FF333333"
+                                android:textSize="@dimen/text_13sp"
+                                android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:visibility="visible"
+                            android:id="@+id/ll_4"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/yxyt"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="线下联盟"
+                                android:textColor="#FF333333"
+                                android:textSize="@dimen/text_13sp"
+                                android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:visibility="visible"
+                            android:id="@+id/ll_6"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/shbb"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="生活必备"
+                                android:textColor="#FF333333"
+                                android:textSize="@dimen/text_13sp"
+                                android:layout_marginTop="8dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_hyzq"
+                        android:overScrollMode="never"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/liwu"/>
+                    <!--<android.support.v4.view.ViewPager-->
+                        <!--android:id="@+id/viewpager"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--/>-->
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rc"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+    </RelativeLayout>
+
+</layout>
+

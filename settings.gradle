@@ -1,0 +1,6 @@
+include ':app',
+        'library:http',
+        'library:BAGlibrary',
+        'library:selectAddress',
+        'library:nicedialog',
+        'library:zxinglibrary'

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/pageBg">
+
+        <RelativeLayout
+            android:id="@+id/rl_img"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/ripple_one_item_bg"
+            android:paddingLeft="14dp"
+            android:paddingRight="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="头像"
+                android:textColor="@color/title1"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/arrow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_header"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                tools:src="@drawable/default_header"
+                android:layout_toLeftOf="@+id/arrow1"
+                app:civ_border_color="@android:color/white"
+                app:civ_border_overlay="true"
+                android:layout_centerVertical="true"
+                app:civ_border_width="3dp"/>
+
+        </RelativeLayout>
+        <View
+            style="@style/default_under_line"/>
+
+        <RelativeLayout
+            android:visibility="visible"
+            android:id="@+id/rl_name"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/ripple_one_item_bg"
+            android:paddingLeft="14dp"
+            android:paddingRight="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="姓名"
+                android:textColor="@color/title1"/>
+
+            <ImageView
+                android:id="@+id/iv_arrow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow"/>
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="郭美美"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_arrow2"/>
+
+        </RelativeLayout>
+        <View
+            style="@style/default_under_line"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_phone"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/ripple_one_item_bg"
+            android:paddingLeft="14dp"
+            android:paddingRight="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="手机号"
+                android:textColor="@color/title1"/>
+
+            <ImageView
+                android:visibility="invisible"
+                android:id="@+id/iv_arrow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow"/>
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="17688700269"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_arrow3"/>
+
+        </RelativeLayout>
+        <View
+            style="@style/default_under_line"/>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_wx"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/ripple_one_item_bg"
+            android:paddingLeft="14dp"
+            android:paddingRight="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="微信号"
+                android:textColor="@color/title1"/>
+
+            <ImageView
+                android:id="@+id/iv_arrow7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow"/>
+            <TextView
+                android:id="@+id/tv_wx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="17688700269"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_arrow7"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/rl_wx_code"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/ripple_one_item_bg"
+            android:paddingLeft="14dp"
+            android:paddingRight="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="微信收款码"
+                android:textColor="@color/title1"/>
+
+            <ImageView
+                android:id="@+id/iv_arrow8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/erweima"
+                android:layout_toLeftOf="@+id/iv_arrow8"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/rl_ali_code"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/ripple_one_item_bg"
+            android:paddingLeft="14dp"
+            android:paddingRight="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="支付宝收款码"
+                android:textColor="@color/title1"/>
+
+            <ImageView
+                android:id="@+id/iv_arrow9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/arrow"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/erweima"
+                android:layout_toLeftOf="@+id/iv_arrow9"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>
+

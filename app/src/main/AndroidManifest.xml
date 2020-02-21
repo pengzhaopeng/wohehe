@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.messoft.gaoqin.wanyiyuan">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:name=".app.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+
+        <!-- 微信开始 -->
+        <!-- 将此activity变透明让用户察觉不出 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+
+        <receiver
+            android:name=".wxapi.AppRegister"
+            android:permission="com.tencent.mm.plugin.permission.SEND">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+        <!-- ############################## 微信结束#################### -->
+
+
+        <!-- ############################## bugly开始#################### -->
+        <!-- 必须配置 -->
+        <activity
+            android:name="com.tencent.bugly.beta.ui.BetaActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <!-- ############################## bugly结束#################### -->
+
+        <activity
+            android:name=".ui.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ViewBigPicTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.viewbigimage.ViewBigImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.webview.WebActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.market.GoldInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.market.WoYaoShouMaiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.market.MyCaiGouListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.market.CaigouInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.market.WoYaoShenShuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.market.MyGuaShouListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.market.GuaShouInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.ForgetPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.ResetPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.ProductInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.AddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.EditAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.AddAddressActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.OrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.BlankCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.EditBlankCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.ChangePwdTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.SetPayPwdOneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.SetPayPwdTwoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.ChangeLoginPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.InputOldPayPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.InputLoginPwdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.PersonInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.SetPersonInfoItemActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.WxAndAliCodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.WalletActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.OrderResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.WalletDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.RechagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.WithdrawActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.DoSuccessActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.FindFriendActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.ZZActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.OrderBuyListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.OrderInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.DaiLiZhuanQuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyShenheProductActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyProductListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.OrderSellListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyBillActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyBillInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.DaiRuZhangActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.PfedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MenberInfoActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.GroupMemberInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MemberPFQOrderListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.XfDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.OrderShActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.OrderShSqActivity"
+            android:screenOrientation="portrait" />
+        <!-- 统一付款页面 透明 -->
+        <!-- android:theme="@style/MyTranslucentTheme" -->
+        <activity
+            android:name=".ui.home.CommonOrderPayActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.SqshActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.OrderShSqInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.SyxqActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.DaiLiJieSuanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.DaiLiJieSuanInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.SjhyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.news.MyNewsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.YqhyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.SearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.SearchResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.login.CommonWebContentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.HxqActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.JfscActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.AllJfProductListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.JfDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.StfActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.YyqgListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.QgInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyQgListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyQgInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyJsListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.WyjsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyQgActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MySsListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.ZrddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.QpfedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.MyJsInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.HyzqActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.my.DaiRuZhangInfoActivit"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.ShbbActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

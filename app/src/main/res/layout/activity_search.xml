@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.messoft.gzmy.intelligentcommunit.ui.serve.SearchActivity">
+
+        <RelativeLayout
+            android:id="@+id/rl_toolbar"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="@dimen/default_toolbar_height">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:background="@drawable/ripple_one_item_bg"
+                android:src="@drawable/icon_back"/>
+
+            <TextView
+                android:id="@+id/tv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ripple_one_item_bg"
+                android:padding="10dp"
+                android:text="搜索"
+                android:visibility="visible"
+                android:textColor="@color/default_text"
+                android:textSize="@dimen/text_16sp"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_search"
+                style="@style/search_input"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@+id/tv_search"
+                android:layout_toRightOf="@+id/iv_back">
+
+                <com.messoft.gaoqin.wanyiyuan.view.edittext.XEditText
+                    android:id="@+id/et_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="@color/default_input_hide_text"
+                    android:background="@null"
+                    android:textSize="@dimen/text_14sp"
+                    android:hint="请输入商品名称"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+        <View
+            android:id="@+id/view_line"
+            android:layout_below="@+id/rl_toolbar"
+            style="@style/default_under_line"/>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_below="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--历史记录-->
+                <RelativeLayout
+                    android:id="@+id/rl_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tv_history_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="历史记录"
+                        android:gravity="center_vertical"
+                        android:drawableLeft="@drawable/search_64"
+                        android:drawablePadding="3dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <ImageView
+                        android:id="@+id/iv_delete_history"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="12dp"
+                        android:padding="8dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/delete_64"
+                        android:background="@drawable/ripple_one_item_bg"/>
+
+                    <com.messoft.gaoqin.wanyiyuan.view.WarpLinearLayout
+                        android:layout_below="@+id/tv_history_title"
+                        android:id="@+id/history_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="8dp"
+                        app:grivate="left"
+                        app:horizontal_Space="10dp"
+                        app:isFull="false"
+                        app:vertical_Space="10dp"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_hot_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="热门搜索"
+                    android:drawableLeft="@drawable/fire_64"
+                    android:drawablePadding="3dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="16dp"/>
+
+                <com.messoft.gaoqin.wanyiyuan.view.WarpLinearLayout
+                    android:id="@+id/hot_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="8dp"
+                    app:grivate="left"
+                    app:horizontal_Space="10dp"
+                    app:isFull="false"
+                    app:vertical_Space="10dp"/>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rc"
+            android:background="@color/white"
+            android:layout_below="@+id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+    </RelativeLayout>
+</layout>
+

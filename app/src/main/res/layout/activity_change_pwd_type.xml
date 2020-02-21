@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:background="@color/theme_bg_color">
+       <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+           android:id="@+id/cw_dlmm"
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/common_setting_height"
+           app:common_setting_widget_has_img="false"
+           app:common_setting_widget_has_underLine="false"
+           app:common_setting_widget_title_left="修改登录密码"
+           app:common_setting_widget_title_right_color="@color/theme_color" />
+
+       <View
+           style="@style/default_under_line" />
+
+       <com.messoft.gaoqin.wanyiyuan.view.CommonSettingWidget
+           android:id="@+id/cw_zfmm"
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/common_setting_height"
+           app:common_setting_widget_has_img="false"
+           app:common_setting_widget_has_underLine="false"
+           app:common_setting_widget_title_left="设置支付密码"
+           app:common_setting_widget_title_right_color="@color/theme_color" />
+   </LinearLayout>
+</layout>

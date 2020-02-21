@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--app:itemIconTint="@drawable/bottom_navigation_selector"-->
+        <android.support.design.widget.BottomNavigationView
+            app:labelVisibilityMode="labeled"
+            android:id="@+id/bye_burger"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            app:itemIconTint="@drawable/bottom_navigation_selector"
+            app:itemTextColor="@color/bottom_navigation_text_selector"
+            app:menu="@menu/menu_bottom_navigation" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_above="@+id/bye_burger"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bottom_shadow" />
+
+        <com.messoft.gaoqin.wanyiyuan.view.NoScrollViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/line" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,34 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation rootProject.ext.dependence.libSupportV7
+    // 网络请求
+    api rootProject.ext.dependence.gson
+    api rootProject.ext.dependence.retrofit
+    api rootProject.ext.dependence.okhttp
+    api rootProject.ext.dependence.okio
+    api rootProject.ext.dependence.converterGson
+    api rootProject.ext.dependence.loggingInterceptor
+    api rootProject.ext.dependence.rxjava
+    api rootProject.ext.dependence.rxandroid
+    api rootProject.ext.dependence.rxjavaAdapter  // 大神写的这个库可以支持到rxjava2.X
+    //compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0' //retrofit现在只支持到rxjava1.XX
+}

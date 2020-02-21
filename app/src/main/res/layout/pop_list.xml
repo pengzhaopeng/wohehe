@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flyco.roundview.RoundLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:rv_cornerRadius_BL="6dp"
+    app:rv_cornerRadius_BR="6dp"
+    app:rv_strokeWidth="0.5dp"
+    app:rv_strokeColor="#edecec">
+   <android.support.v7.widget.RecyclerView
+       android:background="@color/white"
+       android:id="@+id/recyclerView"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:padding="10dp"/>
+</com.flyco.roundview.RoundLinearLayout>

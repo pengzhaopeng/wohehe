@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">万益源</string>
+
+    <string name="toast_network_error">网络异常，请检查网络连接</string>
+
+    <string name="action_share">分享</string>
+    <string name="address_info">%1$s%2$s%3$s%4$s</string>
+
+    <string name="comm_price_format">¥ %s</string>
+    <string name="product_detail_sku_recommend_price">价格：¥%1$s/%2$s</string>
+    <string name="product_detail_sku_stock">(库存:%1$s)</string>
+    <string name="product_detail_sku_quantity_over">购买数量超出最大库存，请修改购买数量</string>
+    <string name="product_detail_sku_quantity_empty">购买数量不能为空</string>
+    <string name="product_detail_sku_add_succeed">商品添加成功，请前往进货单查看</string>
+    <string name="title_activity_dai_li_jie_suan">DaiLiJieSuanActivity</string>
+    <string name="normal_tip_X">购物车中有 %1$d 件商品已经降价，快去看看</string>
+    <string name="rmb_X">¥&#160;%1$.2f</string>
+    <string name="cart">购物车(%1$d)</string>
+    <string name="all_select">全选</string>
+    <string name="edit_done">取消编辑</string>
+    <string name="go_settle_X">去结算(%1$d)</string>
+    <string name="go_settle">去结算</string>
+    <string name="delete_X">删除(%1$d)</string>
+    <string name="total_">合计：</string>
+    <string name="edit">编辑</string>
+    <string name="djq">可使用 %1$s 代金券抵用 %2$s元</string>
+</resources>
