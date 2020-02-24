@@ -27,11 +27,12 @@ public class Constants {
 //    public static final String MASTER_URL = "http://mstest-image.mesandbox.com/";
     public static final String MASTER_URL = "http://ms-image.messandbox.com/";
 
-    // 1-订单支付完成（零售区）  2-订单支付完成（批发区） 3-充值完成
+    // 1-订单支付完成（零售区）  2-订单支付完成（批发区） 3-充值完成 4-订单支付完成（生活必备区）
     public static int ZFB_PAY_CODE;
     public static int ZFB_PAY_ORDER_LSQ = 1;
     public static int ZFB_PAY_ORDER_PFQ = 2;
     public static int ZFB_PAY_RECHARGE = 3; //包含会员升级
+    public static int ZFB_PAY_ORDER_SHBB = 4;
 
     //微信AppID
     public static final String WEIXIN_APP_ID = "wx8b1caefe11f1462f";
@@ -41,9 +42,10 @@ public class Constants {
     public static String PAY_TYPE_QB = "00001";
     public static String PAY_TYPE_ZFB = "00003";
     public static String PAY_TYPE_WX = "00002";
-    //标志当前微信支付的from 1-订单支付完成（零售区）  2-订单支付完成（批发区） 3-充值完成
+    //标志当前微信支付的from 1-订单支付完成（零售区）  2-订单支付完成（批发区） 3-充值完成 4-订单支付完成（生活必备区）
     public static int WX_PAY_CODE;
     public static int WX_PAY_ORDER_LSQ = 1;
     public static int WX_PAY_ORDER_PFQ = 2;
     public static int WX_PAY_RECHARGE = 3; //包含会员升级
+    public static int WX_PAY_ORDER_SHBB = 4;
 }

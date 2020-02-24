@@ -801,6 +801,8 @@ public class OrderActivity extends BaseActivity<ActivityOrderBinding> {
                                         Constants.ZFB_PAY_CODE = Constants.ZFB_PAY_ORDER_PFQ;
                                     } else if (mClassCode.contains("lsq")) {
                                         Constants.ZFB_PAY_CODE = Constants.ZFB_PAY_ORDER_LSQ;
+                                    } else if (mClassCode.contains("shq")) {
+                                        Constants.ZFB_PAY_CODE = Constants.ZFB_PAY_ORDER_SHBB;
                                     }
                                     ToastUtil.showShortToast("支付宝下单成功");
                                     MyALipayUtils.ALiPayBuilder builder = new MyALipayUtils.ALiPayBuilder();
@@ -831,6 +833,8 @@ public class OrderActivity extends BaseActivity<ActivityOrderBinding> {
                                         Constants.WX_PAY_CODE = Constants.WX_PAY_ORDER_PFQ;
                                     } else if (mClassCode.contains("lsq")) {
                                         Constants.WX_PAY_CODE = Constants.WX_PAY_ORDER_LSQ;
+                                    } else if (mClassCode.contains("shq")) {
+                                        Constants.WX_PAY_CODE = Constants.WX_PAY_ORDER_SHBB;
                                     }
                                     //跳转微信付钱
                                     WXPay.getInstance().Pay(wx);

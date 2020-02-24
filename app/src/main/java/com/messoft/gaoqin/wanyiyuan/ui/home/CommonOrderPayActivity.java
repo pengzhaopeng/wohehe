@@ -513,6 +513,8 @@ public class CommonOrderPayActivity extends BaseActivity {
                                             Constants.ZFB_PAY_CODE = Constants.ZFB_PAY_ORDER_PFQ;
                                         } else if (mClassCode.contains("lsq")) {
                                             Constants.ZFB_PAY_CODE = Constants.ZFB_PAY_ORDER_LSQ;
+                                        }else if (mClassCode.contains("shq")) {
+                                            Constants.ZFB_PAY_CODE = Constants.ZFB_PAY_ORDER_SHBB;
                                         }
                                         ToastUtil.showShortToast("支付宝下单成功");
                                         MyALipayUtils.ALiPayBuilder builder = new MyALipayUtils.ALiPayBuilder();
@@ -573,6 +575,8 @@ public class CommonOrderPayActivity extends BaseActivity {
                                             Constants.WX_PAY_CODE = Constants.WX_PAY_ORDER_PFQ;
                                         } else if (mClassCode.contains("lsq")) {
                                             Constants.WX_PAY_CODE = Constants.WX_PAY_ORDER_LSQ;
+                                        } else if (mClassCode.contains("shq")) {
+                                            Constants.WX_PAY_CODE = Constants.WX_PAY_ORDER_SHBB;
                                         }
                                         //跳转微信付钱
                                         WXPay.getInstance().Pay(wx);
@@ -597,23 +601,26 @@ public class CommonOrderPayActivity extends BaseActivity {
      * @param i
      */
     private void paySucess(int i) {
-        switch (i) {
-            case 0: //零售区
-                OrderResultActivity.goPage(getActivity(), mClassCode);
-                ActivityManage.findActivity(ProductInfoActivity.class);
-                ActivityManage.findActivity(OrderActivity.class);
-                finish();
-                break;
-            case 1://批发区
-                OrderResultActivity.goPage(getActivity(), mClassCode);
-                ActivityManage.findActivity(ProductInfoActivity.class);
-                ActivityManage.findActivity(OrderActivity.class);
-                finish();
-                break;
-            case 2://充值(会员升级，置换手续费等共用)
-                finish();
-                break;
-        }
+//        switch (i) {
+//            case 0: //零售区
+//                OrderResultActivity.goPage(getActivity(), mClassCode);
+//                ActivityManage.findActivity(ProductInfoActivity.class);
+//                ActivityManage.findActivity(OrderActivity.class);
+//                finish();
+//                break;
+//            case 1://批发区
+//                OrderResultActivity.goPage(getActivity(), mClassCode);
+//                ActivityManage.findActivity(ProductInfoActivity.class);
+//                ActivityManage.findActivity(OrderActivity.class);
+//                finish();
+//                break;
+//            case 2://充值(会员升级，置换手续费等共用)
+//                finish();
+//                break;
+//        }
+        OrderResultActivity.goPage(getActivity(), mClassCode);
+        ActivityManage.findActivity(ProductInfoActivity.class);
+        finish();
     }
 
     /**

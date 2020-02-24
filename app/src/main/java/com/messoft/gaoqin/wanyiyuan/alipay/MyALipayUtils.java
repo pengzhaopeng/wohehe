@@ -63,10 +63,13 @@ public class MyALipayUtils {
 //                    Intent intent = new Intent(context, MyVipActivity.class);
 //                    context.startActivity(intent);
 
+                    //2020/2/14改动 i的值不影响逻辑，这里可以省略
                     if (Constants.ZFB_PAY_ORDER_LSQ == Constants.ZFB_PAY_CODE) {
                         RxBus.getInstanceBus().post(new RxBusMessage(RxCodeConstants.PAY_SUCESS_ZFB, 0));
                     } else if (Constants.ZFB_PAY_ORDER_PFQ == Constants.ZFB_PAY_CODE) {
                         RxBus.getInstanceBus().post(new RxBusMessage(RxCodeConstants.PAY_SUCESS_ZFB, 1));
+                    } else if (Constants.ZFB_PAY_ORDER_SHBB== Constants.ZFB_PAY_CODE) {
+                        RxBus.getInstanceBus().post(new RxBusMessage(RxCodeConstants.PAY_SUCESS_ZFB, 4));
                     } else if (Constants.ZFB_PAY_RECHARGE == Constants.ZFB_PAY_CODE) {
                         RxBus.getInstanceBus().post(new RxBusMessage(RxCodeConstants.PAY_SUCESS_ZFB, 2));
                     }

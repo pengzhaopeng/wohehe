@@ -81,13 +81,16 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
         }
     }
 
-    //1-订单支付完成（零售区）  2-订单支付完成（批发区） 3-充值完成
+    //1-订单支付完成（零售区）  2-订单支付完成（批发区） 3-充值完成 4-订单支付完成（生活必备区）
+    //2020/2/14改动 i的值不影响逻辑，这里可以省略
     private void goPayOrder() {
         ActivityManage.finishActivity(CommonOrderPayActivity.class);
         if (Constants.WX_PAY_ORDER_LSQ == Constants.WX_PAY_CODE) {
             RxBus.getInstanceBus().post(new RxBusMessage(RxCodeConstants.PAY_SUCESS_WX, 0));
         } else if (Constants.WX_PAY_ORDER_PFQ == Constants.WX_PAY_CODE) {
             RxBus.getInstanceBus().post(new RxBusMessage(RxCodeConstants.PAY_SUCESS_WX, 1));
+        } else if (Constants.WX_PAY_ORDER_SHBB == Constants.WX_PAY_CODE) {
+            RxBus.getInstanceBus().post(new RxBusMessage(RxCodeConstants.PAY_SUCESS_WX, 4));
         } else if (Constants.WX_PAY_RECHARGE == Constants.WX_PAY_CODE) {
             RxBus.getInstanceBus().post(new RxBusMessage(RxCodeConstants.PAY_SUCESS_WX, 2));
         }
