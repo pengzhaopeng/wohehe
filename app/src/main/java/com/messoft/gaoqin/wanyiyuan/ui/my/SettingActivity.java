@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.messoft.gaoqin.wanyiyuan.R;
+import com.messoft.gaoqin.wanyiyuan.app.Constants;
 import com.messoft.gaoqin.wanyiyuan.base.BaseActivity;
 import com.messoft.gaoqin.wanyiyuan.databinding.ActivitySettingBinding;
 import com.messoft.gaoqin.wanyiyuan.http.RequestImpl;
@@ -18,6 +19,7 @@ import com.messoft.gaoqin.wanyiyuan.utils.SysUtils;
 import com.messoft.gaoqin.wanyiyuan.utils.ToastUtil;
 import com.messoft.gaoqin.wanyiyuan.utils.UIUtils;
 import com.messoft.gaoqin.wanyiyuan.utils.dialog.HttpDialogUtils;
+import com.yzq.zxinglibrary.common.Constant;
 
 
 public class SettingActivity extends BaseActivity<ActivitySettingBinding> {
@@ -35,6 +37,12 @@ public class SettingActivity extends BaseActivity<ActivitySettingBinding> {
         showContentView();
         mLoginModel = new LoginModel();
         setTitle("设置");
+
+        if (Constants.isOnline()){
+            bindingView.btnChangeHost.setText("切换域名(当前是正式线)");
+        }else{
+            bindingView.btnChangeHost.setText("切换域名(当前是测试线)");
+        }
     }
 
     @Override
@@ -106,6 +114,40 @@ public class SettingActivity extends BaseActivity<ActivitySettingBinding> {
                     @Override
                     public void exectCancel(DialogInterface dialog) {
                         dialog.dismiss();
+                    }
+                });
+            }
+        });
+
+        //切换域名
+        bindingView.btnChangeHost.setOnClickListener(new PerfectClickListener() {
+            @Override
+            protected void onNoDoubleClick(View v) {
+                DialogWithYesOrNoUtils.getInstance().showDialog(getActivity(), "切换域名", "切换域名会退出登录","正式","测试", new DialogWithYesOrNoUtils.DialogCallBack() {
+                    @Override
+                    public void exectEvent(DialogInterface dialog) {
+                        dialog.dismiss();
+                        if (Constants.isOnline()) {
+                            ToastUtil.showShortToast("已经在正式域名下");
+                            return;
+                        }
+                        //正式
+                        BusinessUtils.setOnlineHost(true);
+                        Constants.setHostOnline();
+                        BusinessUtils.loginOut(getActivity(), LoginActivity.class);
+                    }
+
+                    @Override
+                    public void exectCancel(DialogInterface dialog) {
+                        dialog.dismiss();
+                        if (!Constants.isOnline()) {
+                            ToastUtil.showShortToast("已经在测试域名下");
+                            return;
+                        }
+                        //测试
+                        BusinessUtils.setOnlineHost(false);
+                        Constants.setHostOffline();
+                        BusinessUtils.loginOut(getActivity(), LoginActivity.class);
                     }
                 });
             }

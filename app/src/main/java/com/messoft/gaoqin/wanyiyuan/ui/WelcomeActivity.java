@@ -51,10 +51,17 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        if (!BusinessUtils.getUserAgree()){
+        //设置正式或者测试域名
+        if (BusinessUtils.getOnlineHost()) {
+            Constants.setHostOnline();
+        } else {
+            Constants.setHostOffline();
+        }
+
+        if (!BusinessUtils.getUserAgree()) {
             //用户协议
             showAgree();
-        }else{
+        } else {
             goPage();
         }
 
@@ -140,7 +147,7 @@ public class WelcomeActivity extends AppCompatActivity {
     private void goPage() {
         //如果启动app的Intent中带有额外的参数，表明app是从点击通知栏的动作中启动的
         //将参数取出，传递到MainActivity中
-        if(getIntent().getBundleExtra(Constants.EXTRA_BUNDLE) != null){
+        if (getIntent().getBundleExtra(Constants.EXTRA_BUNDLE) != null) {
             Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
             intent.putExtra(Constants.EXTRA_BUNDLE, getIntent().getBundleExtra(Constants.EXTRA_BUNDLE));
             startActivity(intent);
@@ -193,7 +200,6 @@ public class WelcomeActivity extends AppCompatActivity {
         finish();
         isIn = true;
     }
-
 
 
     /**

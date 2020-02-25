@@ -15,6 +15,17 @@ import com.messoft.gaoqin.wanyiyuan.ui.MainActivity;
 public class BusinessUtils {
 
     /**
+     * 设置域名正式和测试
+     */
+    public static void setOnlineHost(boolean isOnlineHost) {
+        SPUtils.putBoolean("isOnlineHost", isOnlineHost);
+    }
+
+    public static boolean getOnlineHost() {
+        return SPUtils.getBoolean("isOnlineHost", true);
+    }
+
+    /**
      * 保存用户信息
      *
      * @param login MobileSignUp

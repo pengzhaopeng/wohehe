@@ -1,6 +1,42 @@
 package com.messoft.gaoqin.wanyiyuan.app;
 
 public class Constants {
+    //域名
+//    public static String URL_WYY = "http://mstest-wyy.mesandbox.com/";
+    public static String URL_WYY = "http://ms-wyy.bybtb.com/";
+    //    public static String URL_MEMBER = "http://mstest-member.mesandbox.com/";
+    public static String URL_MEMBER = "http://ms-member.messandbox.com/";
+    //    public static String URL_COMMON = "http://mstest-common.mesandbox.com/";
+    public static String URL_COMMON = "http://ms-common.messandbox.com/";
+    //抢购
+//    public static String URL_QG = "http://t-wyyqg.mesandbox.com/";
+    public static String URL_QG = "http://wyyqg.messandbox.com/";
+    //文件主域
+//    public static  String MASTER_URL = "http://mstest-image.mesandbox.com/";
+    public static String MASTER_URL = "http://ms-image.messandbox.com/";
+
+    //设置正式域名
+    public static void setHostOnline() {
+        URL_WYY = "http://ms-wyy.bybtb.com/";
+        URL_MEMBER = "http://ms-member.messandbox.com/";
+        URL_COMMON = "http://ms-common.messandbox.com/";
+        URL_QG = "http://wyyqg.messandbox.com/";
+        MASTER_URL = "http://ms-image.messandbox.com/";
+    }
+
+    //设置测试域名
+    public static void setHostOffline() {
+        URL_WYY = "http://mstest-wyy.mesandbox.com/";
+        URL_MEMBER = "http://mstest-member.mesandbox.com/";
+        URL_COMMON = "http://mstest-common.mesandbox.com/";
+        URL_QG = "http://t-wyyqg.mesandbox.com/";
+        MASTER_URL = "http://mstest-image.mesandbox.com/";
+    }
+
+    //是否是正式
+    public static boolean isOnline() {
+        return URL_WYY.equals("http://ms-wyy.bybtb.com/");
+    }
 
     //bindAccountId
     public static String bindAccountId = "";
@@ -12,20 +48,6 @@ public class Constants {
     public static int REQUEST_CODE_PHOTO_PREVIEW = 2;
     public static int REQUEST_CODE_CHOOSE_PHOTO = 1;
 
-    //域名
-//    public static String URL_WYY = "http://mstest-wyy.mesandbox.com/";
-    public static String URL_WYY = "http://ms-wyy.bybtb.com/";
-//    public static String URL_MEMBER = "http://mstest-member.mesandbox.com/";
-    public static String URL_MEMBER = "http://ms-member.messandbox.com/";
-//    public static String URL_COMMON = "http://mstest-common.mesandbox.com/";
-    public static String URL_COMMON = "http://ms-common.messandbox.com/";
-    //抢购
-//    public static String URL_QG = "http://t-wyyqg.mesandbox.com/";
-    public static String URL_QG = "http://wyyqg.messandbox.com/";
-
-    //文件主域
-//    public static final String MASTER_URL = "http://mstest-image.mesandbox.com/";
-    public static final String MASTER_URL = "http://ms-image.messandbox.com/";
 
     // 1-订单支付完成（零售区）  2-订单支付完成（批发区） 3-充值完成 4-订单支付完成（生活必备区）
     public static int ZFB_PAY_CODE;

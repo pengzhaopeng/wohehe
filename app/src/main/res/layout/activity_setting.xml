@@ -104,5 +104,19 @@
             android:layout_centerVertical="true"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="14dp"/>
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/btn_change_host"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            app:rv_backgroundColor="#595656"
+            android:text="切换域名(测试用)"
+            android:textColor="@color/white"
+            android:gravity="center"
+            app:rv_cornerRadius="20dp"
+            android:textSize="@dimen/text_14sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="0dp" />
     </LinearLayout>
 </layout>
