@@ -4,38 +4,31 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.view.View;
 
 import com.jzxiang.pickerview.TimePickerDialog;
 import com.jzxiang.pickerview.data.Type;
 import com.jzxiang.pickerview.listener.OnDateSetListener;
 import com.messoft.gaoqin.wanyiyuan.R;
-import com.messoft.gaoqin.wanyiyuan.adapter.DrzListAdapter;
+import com.messoft.gaoqin.wanyiyuan.adapter.MyFragmentPagerAdapter;
 import com.messoft.gaoqin.wanyiyuan.base.BaseActivity;
-import com.messoft.gaoqin.wanyiyuan.base.baseadapter.OnItemClickListener;
-import com.messoft.gaoqin.wanyiyuan.bean.MemberCapitalWaitLogList;
-import com.messoft.gaoqin.wanyiyuan.databinding.ActivityMyBillInfoBinding;
-import com.messoft.gaoqin.wanyiyuan.http.HttpUtils;
-import com.messoft.gaoqin.wanyiyuan.http.RequestImpl;
+import com.messoft.gaoqin.wanyiyuan.databinding.ActivityMyBillInfo1Binding;
 import com.messoft.gaoqin.wanyiyuan.model.WalletModel;
-import com.messoft.gaoqin.wanyiyuan.utils.BusinessUtils;
 import com.messoft.gaoqin.wanyiyuan.utils.DebugUtil;
-import com.messoft.gaoqin.wanyiyuan.utils.DensityUtils;
-import com.messoft.gaoqin.wanyiyuan.utils.PerfectClickListener;
 import com.messoft.gaoqin.wanyiyuan.utils.ToastUtil;
-import com.messoft.gaoqin.wanyiyuan.view.recyclerview.RecycleViewDivider;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * 待入张
  */
-public class DaiRuZhangActivity extends BaseActivity<ActivityMyBillInfoBinding> {
+public class DaiRuZhangActivity1 extends BaseActivity<ActivityMyBillInfo1Binding> {
 
-    private DrzListAdapter mAdapterLeft;
+
     private WalletModel mModel;
     private String beginTime = null; //用来提交后台 需要时分秒 补0
     private String endTime = null;
@@ -53,12 +46,15 @@ public class DaiRuZhangActivity extends BaseActivity<ActivityMyBillInfoBinding> 
     @SuppressLint("SimpleDateFormat")
     SimpleDateFormat sf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    private int mPage = HttpUtils.start_page_java;
+    //    private int mPage = HttpUtils.start_page_java;
+    DrzListLeftFragment drzListLeftFragment;
+    DrzListRightFragment drzListRightFragment;
+    private int mPosition = 0; //选中位置默认0
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_bill_info);
+        setContentView(R.layout.activity_my_bill_info1);
 
     }
 
@@ -69,78 +65,53 @@ public class DaiRuZhangActivity extends BaseActivity<ActivityMyBillInfoBinding> 
         setRightImg(R.drawable.rili);
         mModel = new WalletModel();
         bindingView.rlDrz.setVisibility(View.VISIBLE);
+        bindingView.drzEdmx.setVisibility(View.GONE);
         if (getIntent() != null) {
             String money = getIntent().getStringExtra("money");
             bindingView.tvDrzMoney.setText(money);
         }
-        mAdapterLeft = new DrzListAdapter();
-        initOnRefresh(getActivity(), bindingView.rc);
-//        bindingView.rcAddress.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-        bindingView.rc.addItemDecoration(new RecycleViewDivider(
-                getActivity(), LinearLayoutManager.VERTICAL,
-                DensityUtils.dp2px(getActivity(), 8),
-                getResources().getColor(R.color.colorPageBg)));
-        bindingView.rc.setAdapter(mAdapterLeft);
-
         initTime();
 
-        loadData();
+        initTab();
     }
 
     @Override
     protected void initListener() {
-        bindingView.refreshLayout.setEnableRefresh(false);
-        bindingView.refreshLayout.setOnLoadmoreListener(refreshlayout -> refreshlayout.getLayout().postDelayed(() -> {
-            mPage++;
-            loadData();
-            refreshlayout.finishLoadmore();
-        }, 300));
-
-        getRightTv().setOnClickListener(new PerfectClickListener() {
+        bindingView.tabLinli.setOnTabSelectedListener(new TabLayout.BaseOnTabSelectedListener() {
             @Override
-            protected void onNoDoubleClick(View v) {
-                //开始时间
-                mDialogStart.show(getSupportFragmentManager(), "year_month_day");
+            public void onTabSelected(TabLayout.Tab tab) {
+                mPosition = tab.getPosition();
             }
-        });
 
-        mAdapterLeft.setOnItemClickListener(new OnItemClickListener<MemberCapitalWaitLogList>() {
             @Override
-            public void onClick(MemberCapitalWaitLogList memberCapitalWaitLogList, int position) {
-                if (memberCapitalWaitLogList != null && memberCapitalWaitLogList.getType().equals("0")) {
-                    DaiRuZhangInfoActivit.goPage(getActivity(), memberCapitalWaitLogList);
-                }
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
     }
 
-    private void loadData() {
-        mModel.getMemberCapitalWaitLogList(getActivity(), BusinessUtils.getBindAccountId(), "0", beginTime, endTime, mPage, HttpUtils.per_page_20, new RequestImpl() {
-            @Override
-            public void loadSuccess(Object object) {
-                List<MemberCapitalWaitLogList> data = (List<MemberCapitalWaitLogList>) object;
-                if (mPage == HttpUtils.start_page_java) {
-                    if (data != null && data.size() > 0) {
-                        mAdapterLeft.clear();
-                        mAdapterLeft.addAll(data);
-                        mAdapterLeft.notifyDataSetChanged();
-                    } else {
-                        ToastUtil.showLongToast("未查询到明细数据");
-                        mAdapterLeft.clear();
-                        mAdapterLeft.notifyDataSetChanged();
-                    }
-                } else {
-                    mAdapterLeft.addAll(data);
-                    mAdapterLeft.notifyDataSetChanged();
-                    bindingView.refreshLayout.finishLoadmore();
-                }
-            }
+    private void initTab() {
+        ArrayList<Fragment> mFragments = new ArrayList<>();
+        ArrayList<String> mTitleList = new ArrayList<>();
+        mTitleList.add("互销区商品销售");
+        mTitleList.add("业绩提成");
+        drzListLeftFragment = DrzListLeftFragment.newInstance(beginTime, endTime);
+        drzListRightFragment = DrzListRightFragment.newInstance(beginTime, endTime);
+        mFragments.add(drzListLeftFragment);
+        mFragments.add(drzListRightFragment);
 
-            @Override
-            public void loadFailed(int errorCode, String errorMessage) {
-                ToastUtil.showShortToast(errorMessage);
-            }
-        });
+        MyFragmentPagerAdapter myAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager(), mFragments, mTitleList);
+        bindingView.vpLinli.setAdapter(myAdapter);
+        // 左右预加载页面的个数
+        bindingView.vpLinli.setOffscreenPageLimit(mTitleList.size() - 1);
+        myAdapter.notifyDataSetChanged();
+        bindingView.tabLinli.setTabMode(TabLayout.MODE_FIXED);
+        bindingView.tabLinli.setupWithViewPager(bindingView.vpLinli);
     }
 
     private void initTime() {
@@ -196,8 +167,11 @@ public class DaiRuZhangActivity extends BaseActivity<ActivityMyBillInfoBinding> 
 
                         bindingView.drzEdmx.setText("额度明细 (" + mDateStart + " - " + mDateEnd + ")");
 
-                        //开始搜索
-                        loadData();
+                        if (mPosition == 0) {
+                            drzListLeftFragment.setBeginAndEndTime(beginTime, endTime);
+                        } else {
+                            drzListRightFragment.setBeginAndEndTime(beginTime, endTime);
+                        }
                     }
                 })
                 .setCancelStringId("取消")
@@ -231,7 +205,7 @@ public class DaiRuZhangActivity extends BaseActivity<ActivityMyBillInfoBinding> 
     }
 
     public static void goPage(Context context, String money) {
-        Intent intent = new Intent(context, DaiRuZhangActivity.class);
+        Intent intent = new Intent(context, DaiRuZhangActivity1.class);
         intent.putExtra("money", money);
         context.startActivity(intent);
     }

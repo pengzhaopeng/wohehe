@@ -224,6 +224,9 @@
             android:name=".ui.my.DaiRuZhangActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".ui.my.DaiRuZhangActivity1"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.my.PfedActivity"
             android:screenOrientation="portrait" />
         <activity

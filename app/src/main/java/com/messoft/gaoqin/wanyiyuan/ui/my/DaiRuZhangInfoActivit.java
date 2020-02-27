@@ -32,7 +32,7 @@ public class DaiRuZhangInfoActivit extends BaseActivity<ActivityDaiRuZhangInfoBi
             if (data != null) {
                 bindingView.tv1.setText("待入账金额：" + data.getAmount());
                 bindingView.tv2.setText("排队开始时间：" + data.getCreateTime());
-                bindingView.tv3.setText("待入账原因："+ TimeUtils.timeFormat(data.getCreateTime(),"mm月dd号")+"商品批发区商品出售");
+                bindingView.tv3.setText("待入账原因："+ TimeUtils.timeFormat(data.getCreateTime(),"yyyy年MM月dd号")+"商品批发区商品出售");
                 bindingView.tv4.setText("预计出货时间：" + data.getQueueWaitTime());
                 String money = null;
                 if (data.getQueueMaxAmount() <= 10000) {

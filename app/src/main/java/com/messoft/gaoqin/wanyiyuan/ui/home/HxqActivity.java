@@ -112,7 +112,7 @@ public class HxqActivity extends BaseActivity<ActivityHxqBinding> {
         mTitleList.clear();
         mFragments.clear();
         for (ProductType getChannelList : data) {
-            if (!getChannelList.getCode().equals("jfsc")) {
+            if (!getChannelList.getCode().equals("jfsc") && !getChannelList.getCode().contains("shq")) {
                 mTitleList.add(getChannelList.getDescription());
                 mFragments.add(ProductListFragment.newInstance(getChannelList.getId(),-1));
             }

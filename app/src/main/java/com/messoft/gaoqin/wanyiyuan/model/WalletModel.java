@@ -8,6 +8,7 @@ import com.messoft.gaoqin.wanyiyuan.bean.MemberBillList;
 import com.messoft.gaoqin.wanyiyuan.bean.MemberCapitalLogList;
 import com.messoft.gaoqin.wanyiyuan.bean.MemberCapitalWaitLogList;
 import com.messoft.gaoqin.wanyiyuan.bean.MemberCapitalWaitLogSummary;
+import com.messoft.gaoqin.wanyiyuan.bean.MemberGainsWaitLogList;
 import com.messoft.gaoqin.wanyiyuan.bean.MemberSettlementLineList;
 import com.messoft.gaoqin.wanyiyuan.bean.MemberSettlementLineStatistics;
 import com.messoft.gaoqin.wanyiyuan.bean.MemberSettlementLis;
@@ -273,6 +274,55 @@ public class WalletModel {
     }
 
     /**
+     * 会员待收益流水列表查询
+     */
+    public void getMemberGainsWaitLogList(BaseActivity context,
+                                            String memberId,
+                                            String amountType,
+                                            String state,
+                                            String beginTime,
+                                            String endTime,
+                                            int pageNo,
+                                            int pageSize, final RequestImpl listener) {
+        JSONObject jsonObject = new JSONObject();
+        try {
+            if (memberId != null) {
+                jsonObject.put("memberId", memberId);
+            }
+            if (amountType != null) {
+                jsonObject.put("amountType", amountType);
+            }
+            if (state != null) {
+                jsonObject.put("state", state);
+            }
+            if (beginTime != null) {
+                jsonObject.put("createTime_begin", beginTime);
+            }
+            if (endTime != null) {
+                jsonObject.put("createTime_end", endTime);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        HttpClient.Builder.getWYYServer().getMemberGainsWaitLogList(StringUtils.toURLEncoderUTF8(jsonObject.toString()), pageNo, pageSize)
+                .compose(RxSchedulers.compose())
+                .compose(context.bindToLifecycle())
+                .subscribe(new BaseObserver<List<MemberGainsWaitLogList>>(context, true, "加载中...") {
+                    @Override
+                    protected void onSuccess(List<MemberGainsWaitLogList> login) {
+                        if (login != null) {
+                            listener.loadSuccess(login);
+                        }
+                    }
+
+                    @Override
+                    protected void onFailure(int errorCode, String msg) {
+                        listener.loadFailed(errorCode, msg);
+                    }
+                });
+    }
+
+    /**
      * 会员批发额度明细列表查询
      */
     public void getMemberWholesaleCapitalList(BaseActivity context,
@@ -423,17 +473,12 @@ public class WalletModel {
     public void getMemberSettlementLis(BaseActivity context,
                                        int pageNo,
                                        int pageSize, final RequestImpl listener) {
-//        JSONObject jsonObject = new JSONObject();
-//        try {
-//            if (memberId != null) {
-//                jsonObject.put("memberId", memberId);
-//            }
-//            if (memberId != null) {
-//                jsonObject.put("type", type);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("type", 1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         HttpClient.Builder.getWYYServer().getMemberSettlementLis("", pageNo, pageSize)
                 .compose(RxSchedulers.compose())
                 .compose(context.bindToLifecycle())
@@ -457,10 +502,10 @@ public class WalletModel {
      * 会员积分明细列表查询
      */
     public void getMemberPointsLogList(BaseActivity context,
-                                  String memberId,
-                                  int type, //0：购物积分，1：代金券，2：生态分
-                                  int pageNo,
-                                  int pageSize, final RequestImpl listener) {
+                                       String memberId,
+                                       int type, //0：购物积分，1：代金券，2：生态分
+                                       int pageNo,
+                                       int pageSize, final RequestImpl listener) {
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("memberId", memberId);

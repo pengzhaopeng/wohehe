@@ -32,6 +32,7 @@ import com.messoft.gaoqin.wanyiyuan.bean.MemberBillStatistics;
 import com.messoft.gaoqin.wanyiyuan.bean.MemberCapitalLogList;
 import com.messoft.gaoqin.wanyiyuan.bean.MemberCapitalWaitLogList;
 import com.messoft.gaoqin.wanyiyuan.bean.MemberCapitalWaitLogSummary;
+import com.messoft.gaoqin.wanyiyuan.bean.MemberGainsWaitLogList;
 import com.messoft.gaoqin.wanyiyuan.bean.MemberInfoList;
 import com.messoft.gaoqin.wanyiyuan.bean.MemberSettlementLineList;
 import com.messoft.gaoqin.wanyiyuan.bean.MemberSettlementLineStatistics;
@@ -460,6 +461,15 @@ public interface HttpClient {
     Observable<BaseBean<List<MemberCapitalWaitLogList>>> getMemberCapitalWaitLogList(@Field("data") String data,
                                                                                      @Field("pageNo") int pageNo,
                                                                                      @Field("pageSize") int pageSize);
+
+    /**
+     * 2.16.4 会员待收益流水列表查询
+     */
+    @FormUrlEncoded
+    @POST("/memberGainsWaitLog/memberGainsWaitLog.do?action=getMemberGainsWaitLogList")
+    Observable<BaseBean<List<MemberGainsWaitLogList>>> getMemberGainsWaitLogList(@Field("data") String data,
+                                                                                 @Field("pageNo") int pageNo,
+                                                                                 @Field("pageSize") int pageSize);
 
     /**
      * 2.10.4 会员批发额度明细列表查询

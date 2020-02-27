@@ -304,7 +304,7 @@ public class MyFragment extends BaseFragment<FragmentMyBinding> {
         bindingView.llDyz.setOnClickListener(new PerfectClickListener() {
             @Override
             protected void onNoDoubleClick(View v) {
-                DaiRuZhangActivity.goPage(getActivity(), mUnliquidatedCapital);
+                DaiRuZhangActivity1.goPage(getActivity(), mUnliquidatedCapital);
             }
         });
         //全部订单
